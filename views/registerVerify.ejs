@@ -1,9 +1,0 @@
-{{#if error}}
-    <p>{{error}}</p>
-{{/if}}
-<p>We have sent you a veritication code!</p>
-<form method="POST" action="/step3">
-    <input type="hidden" name="id" value="{{id}}"/>
-    <input type="text" name="token"/>
-    <input type="submit" value="Tiep theo"/>
-</form>
