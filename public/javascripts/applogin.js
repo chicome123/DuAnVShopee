@@ -15,3 +15,10 @@ sign_in_btn.addEventListener("click", () => {
   logo.style.opacity = 1;
   logo1.style.opacity = 0;
 });
+
+//  tham gia ngay
+const button = document.getElementById('join');
+button.addEventListener('click', function(e) {
+  
+});
+

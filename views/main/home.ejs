@@ -1,0 +1,90 @@
+<%- include('../partials/header'); %>
+<body>
+	<div class="container-fluid" style="background-color: #000000;">
+		<div class="container" style="max-width: 100%;">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;" href="/">HOME-VShop</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+						</li>
+
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Kết nối vói chúng tôi
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="https://www.facebook.com/nonamedatv"><i class="fa fa-facebook"
+									style="padding-left: 10px;
+									padding: 5px 8px 5px 8px;"></i> Facebook</a>
+								<a class="dropdown-item" href="https://www.instagram.com/"><i class="fa fa-instagram"
+									style="padding-left: 10px;
+									padding: 5px;"></i> Instagram</a>
+								<a class="dropdown-item" href="https://twitter.com/"><i class="fa fa-twitter"
+									style="padding-left: 10px;
+									padding: 5px;"></i> Twitter</a>
+							</div>
+						</li>
+						
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Bạn muốn tìm kiếm
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Sản phẩm thời trang</a>
+								<a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="#">Một số sản phẩm khác</a>
+							</div>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link disabled" href="#" style="margin-right: 40px; margin-left: 30px;" tabindex="-1" aria-disabled="true">CHÚNG TÔI (VShop) Ở ĐÂY VÌ BẠN!!!</a>
+						</li>
+					</ul>
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+					</form>
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item">
+							<a class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
+									aria-hidden="true"></i> Giỏ hàng của bạn</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<!--slider start -->
+  <%- include ('../partials/sliderstart'); %>
+	<!--slider end-->
+  <%- include ('../partials/sliderend'); %>
+	<!--counter start-->
+	<div class="container counter">
+		<div class="row justify-content-center mt-5 mb-2" style="padding-top: 150px">
+			<h1 class="text"><strong>Săn sale sẽ sớm bắt đầu!!!</strong></h1>
+		</div>
+		<div class="row justify-content-center rounded-pill mt-5" style="padding-bottom: 100px; font-size: 70px"
+			id="countdown">
+		</div>
+		<div class="row mt-1 pb-5">
+			<div class="col-md-12 text-center"><a class="btn btn-danger text-light btn-lg">ĐĂNG KÝ NGAY</a></div>
+		</div>
+	</div>
+	<!--counter end-->
+  <%- include ('../partials/counter'); %>
+  <%- include ('../partials/footer'); %>
+  <%- include ('../partials/pools'); %>
+  <%- include ('../partials/end'); %>
+
