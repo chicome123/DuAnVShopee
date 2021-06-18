@@ -1,0 +1,452 @@
+Note 
+Trang người bán 
+admin/product -> chức năng thêm sản phẩm  --> admin/product/add --> 
+Mongo
+[
+    {
+        "name": "Bàn trang điểm",
+        "price": "12.3",
+        "img": "/images/mirror1.jpg"
+    },
+    {
+        "name": "Tủ kim cương",
+        "price": "42.6",
+        "img": "/images/mirror2.jpg"
+    },
+    {
+        "name": "Tủ dọc",
+        "price": "32.7",
+        "img": "/images/mirror3.jpg"
+    },
+    {
+        "name": "Tủ Vàng",
+        "price": "16.95",
+        "img": "/images/mirror4.jpg"
+    },
+    {
+        "name": "Sofa Xám 5",
+        "price": "22.5",
+        "img": "/images/sofa1.jpg"
+    },
+    {
+        "name": "Bàn kính",
+        "price": "33.2",
+        "img": "/images/table1.jpg"
+    },
+    {
+        "name": "Giường tân hôn 7",
+        "price": "22.5",
+        "img": "/images/bed1.jpg"
+    },
+    {
+        "name": "Bàn đại gia",
+        "price": "33.5",
+        "img": "/images/mirror2.jpg"
+    }
+]
+
+
+<!-- thời trang nữ -->
+		<section class="new-arrivals">
+			<div id="site">
+				<div class="container">
+					
+					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
+						<div class="title-box-nu">
+							<h2>Hàng thời trang nữ</h2>
+						</div>
+						<div class="row">
+
+							<% product.forEach((value)=>{ %>
+								<div class="col-md-3">
+									<div class="product-top">
+										<img src="<%= value.img %>">
+
+									
+										<div class="overlay-right">
+											<button type="button" class="btn btn-secondary" title="Quick Shop">
+												<i class="fa fa-eye"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+												<i class="fa fa-heart-o"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Cart">
+												<i class="fa fa-shopping-cart"></i>
+											</button>
+										</div>
+									</div>
+			
+									<div class="product-bottom text-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+										<h3><%= value.name %></h3>
+										<div class="product-description" data-name="Mirror" data-price="10">
+			
+											<p class="product-price">&euro; <%= value.price%></p>
+											<form class="add-to-cart" action="/giohang" method="post">
+												<div>
+													<label for="qty-2">Số lượng</label>
+													<input type="number" name="number" id="qty-2" class="qty" value="1" />
+													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+												</div>
+												<p><input type="submit" value="Add to cart" class="btn" /></p>
+											</form>
+			
+										</div>
+									</div>
+								</div>
+
+							<% }) %>
+		
+							
+						</div>
+		
+		
+		
+						
+						<div class="chon" style="text-align: center; width: 100%;">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
+						</div>
+					</div>
+		
+					
+
+				</div>
+			</div>
+		</section>
+
+		<!-- thời trang nam -->
+		<section class="new-arrivals">
+			<div id="site">
+				<div class="container">
+					
+					<!-- Nooij that -->
+					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
+						<div class="title-box-nam">
+							<h2>Hàng thời trang nam</h2>
+						</div>
+						<div class="row">
+
+							<% product.forEach((value)=>{ %>
+								<div class="col-md-3">
+									<div class="product-top">
+										<img src="<%= value.img %>">
+
+									
+										<div class="overlay-right">
+											<button type="button" class="btn btn-secondary" title="Quick Shop">
+												<i class="fa fa-eye"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+												<i class="fa fa-heart-o"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Cart">
+												<i class="fa fa-shopping-cart"></i>
+											</button>
+										</div>
+									</div>
+			
+									<div class="product-bottom text-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+										<h3><%= value.name %></h3>
+										<div class="product-description" data-name="Mirror" data-price="10">
+			
+											<p class="product-price">&euro; <%= value.price%></p>
+											<form class="add-to-cart" action="/giohang" method="post">
+												<div>
+													<label for="qty-2">Số lượng</label>
+													<input type="number" name="number" id="qty-2" class="qty" value="1" />
+													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+												</div>
+												<p><input type="submit" value="Add to cart" class="btn" /></p>
+											</form>
+			
+										</div>
+									</div>
+								</div>
+
+							<% }) %>
+		
+							
+						</div>
+		
+		
+		
+						
+						<div class="chon" style="text-align: center; width: 100%;">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
+						</div>
+					</div>
+		
+					
+
+				</div>
+			</div>
+		</section>
+
+		<!-- my pham -->
+		<section class="new-arrivals">
+			<div id="site">
+				<div class="container">
+
+					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
+						<div class="title-box-mp">
+							<h2>Mỹ phẩm</h2>
+						</div>
+						<div class="row">
+
+							<% product.forEach((value)=>{ %>
+								<div class="col-md-3">
+									<div class="product-top">
+										<img src="<%= value.img %>">
+
+									
+										<div class="overlay-right">
+											<button type="button" class="btn btn-secondary" title="Quick Shop">
+												<i class="fa fa-eye"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+												<i class="fa fa-heart-o"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Cart">
+												<i class="fa fa-shopping-cart"></i>
+											</button>
+										</div>
+									</div>
+			
+									<div class="product-bottom text-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+										<h3><%= value.name %></h3>
+										<div class="product-description" data-name="Mirror" data-price="10">
+			
+											<p class="product-price">&euro; <%= value.price%></p>
+											<form class="add-to-cart" action="/giohang" method="post">
+												<div>
+													<label for="qty-2">Số lượng</label>
+													<input type="number" name="number" id="qty-2" class="qty" value="1" />
+													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+												</div>
+												<p><input type="submit" value="Add to cart" class="btn" /></p>
+											</form>
+			
+										</div>
+									</div>
+								</div>
+
+							<% }) %>
+		
+							
+						</div>
+		
+		
+		
+						
+						<div class="chon" style="text-align: center; width: 100%;">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
+						</div>
+					</div>
+		
+					
+
+				</div>
+			</div>
+		</section>
+
+		<!-- công nghệ -->
+		<section class="new-arrivals">
+			<div id="site">
+				<div class="container">
+
+					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
+						<div class="title-box-cn">
+							<h2>Hàng công nghệ</h2>
+						</div>
+						<div class="row">
+
+							<% product.forEach((value)=>{ %>
+								<div class="col-md-3">
+									<div class="product-top">
+										<img src="<%= value.img %>">
+
+									
+										<div class="overlay-right">
+											<button type="button" class="btn btn-secondary" title="Quick Shop">
+												<i class="fa fa-eye"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+												<i class="fa fa-heart-o"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Cart">
+												<i class="fa fa-shopping-cart"></i>
+											</button>
+										</div>
+									</div>
+			
+									<div class="product-bottom text-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+										<h3><%= value.name %></h3>
+										<div class="product-description" data-name="Mirror" data-price="10">
+			
+											<p class="product-price">&euro; <%= value.price%></p>
+											<form class="add-to-cart" action="/giohang" method="post">
+												<div>
+													<label for="qty-2">Số lượng</label>
+													<input type="number" name="number" id="qty-2" class="qty" value="1" />
+													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+												</div>
+												<p><input type="submit" value="Add to cart" class="btn" /></p>
+											</form>
+			
+										</div>
+									</div>
+								</div>
+
+							<% }) %>
+		
+							
+						</div>
+		
+		
+		
+						
+						<div class="chon" style="text-align: center; width: 100%;">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
+						</div>
+					</div>
+		
+					
+
+				</div>
+			</div>
+		</section>
+
+		<!-- Laptop -->
+		<section class="new-arrivals">
+			<div id="site">
+				<div class="container">
+					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
+						<div class="title-box-lt">
+							<h2>SP Laptop</h2>
+						</div>
+						<div class="row">
+
+							<% product.forEach((value)=>{ %>
+								<div class="col-md-3">
+									<div class="product-top">
+										<img src="<%= value.img %>">
+
+									
+										<div class="overlay-right">
+											<button type="button" class="btn btn-secondary" title="Quick Shop">
+												<i class="fa fa-eye"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
+												<i class="fa fa-heart-o"></i>
+											</button>
+			
+											<button type="button" class="btn btn-secondary" title="Add to Cart">
+												<i class="fa fa-shopping-cart"></i>
+											</button>
+										</div>
+									</div>
+			
+									<div class="product-bottom text-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star-half-o"></i>
+										<h3><%= value.name %></h3>
+										<div class="product-description" data-name="Mirror" data-price="10">
+			
+											<p class="product-price">&euro; <%= value.price%></p>
+											<form class="add-to-cart" action="/giohang" method="post">
+												<div>
+													<label for="qty-2">Số lượng</label>
+													<input type="number" name="number" id="qty-2" class="qty" value="1" />
+													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+												</div>
+												<p><input type="submit" value="Add to cart" class="btn" /></p>
+											</form>
+			
+										</div>
+									</div>
+								</div>
+
+							<% }) %>
+		
+							
+						</div>
+		
+		
+		
+						
+						<div class="chon" style="text-align: center; width: 100%;">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
+							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
+						</div>
+					</div>
+		
+					
+
+				</div>
+			</div>
+		</section>

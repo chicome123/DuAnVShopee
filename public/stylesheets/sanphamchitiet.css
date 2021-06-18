@@ -1,0 +1,124 @@
+img {   
+  max-width: 100%;
+  }
+.preview {  
+  display: -webkit-box;   
+  display: -webkit-flex;  
+  display: -ms-flexbox;   
+  display: flex;  
+  -webkit-box-orient: vertical;   
+  -webkit-box-direction: normal;  
+  -webkit-flex-direction: column; 
+  -ms-flex-direction: column; 
+  flex-direction: column;
+  } 
+   
+  @media screen and (max-width: 996px) { 
+  .preview { 
+  margin-bottom: 20px;
+  }
+  }
+   
+.preview-pic {  
+  -webkit-box-flex: 1;    
+  -webkit-flex-grow: 1;   
+  -ms-flex-positive: 1;   
+  flex-grow: 1;
+}
+   
+.preview-thumbnail.nav-tabs {   
+  border: none;   
+  margin-top: 15px;
+}
+   
+.preview-thumbnail.nav-tabs li {    
+  width: 18%; 
+  margin-right: 2.5%;
+}
+   
+.preview-thumbnail.nav-tabs li img {    
+  max-width: 100%;    
+  display: block;
+}
+   
+.preview-thumbnail.nav-tabs li a {  
+  padding: 0; 
+  margin: 0;  
+  cursor:pointer;
+}
+   
+.preview-thumbnail.nav-tabs li:last-of-type {   
+  margin-right: 0;
+}
+   
+.tab-content {  
+  overflow: hidden;
+}
+   
+.tab-content img {  
+  width: 100%;    
+  -webkit-animation-name: opacity;    
+  animation-name: opacity; 
+  -webkit-animation-duration: .3s; 
+  animation-duration: .3s;
+}
+
+.tab{
+  color: #ff5622;
+  font-weight: 500;
+  letter-spacing: 0;
+  padding: 0;
+}
+.price{
+  font-size: 1.5em;
+  margin: .5em 0;
+  font-weight: bolder;
+  color: #ff5622;
+}
+.price-curen{
+  font-size: .75em;
+  vertical-align: top;
+}
+.fs-dtslt{
+  font-weight: normal;
+  color: #fff;
+  padding: 4px 10px;
+  background-color: #FF5622;
+}
+.fs-dtslbox {
+  position: relative;
+  padding: 12px;
+  margin-bottom: 15px;
+  background: #fff;
+  border: 1px solid #d7d7d7;
+  border-radius: 0 0 2px 2px;
+}
+.text-center .quantity, .quantity {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-right: 1em;
+  vertical-align: top;
+}
+.minus{
+  outline: none;
+  width: 1.5em;
+  border: 1px #ddd;
+}
+.plus{
+  outline: none;
+  width: 1.5em;
+  border: 1px #ddd;
+}
+.input-text{
+  text-align: center;
+  width: 1em;
+  width: 3em;
+  outline: none;
+  border: 1px #777;
+}
+.single_add_to_cart_button{
+  padding: 5px;
+  background: #ff5622;
+  border: none;
+  color: white;
+}

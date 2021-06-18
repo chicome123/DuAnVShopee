@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/counter.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style-giohang.css">
+  <title>Giỏ hàng</title>
+</head>
+
+<body>
+  <!-- Phân đầu -->
+
+  <div class="container-fluid" style="background-color: #000000;">
+    <div class="container" style="max-width: 100%;">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
+          href="/">HOME-VShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Kết nối vói chúng tôi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://www.facebook.com/nonamedatv"><i class="fa fa-facebook" style="padding-left: 10px;
+                padding: 5px 8px 5px 8px;"></i> Facebook</a>
+                <a class="dropdown-item" href="https://www.instagram.com/"><i class="fa fa-instagram" style="padding-left: 10px;
+                padding: 5px;"></i> Instagram</a>
+                <a class="dropdown-item" href="https://twitter.com/"><i class="fa fa-twitter" style="padding-left: 10px;
+                padding: 5px;"></i> Twitter</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Bạn muốn tìm kiếm
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Sản phẩm thời trang</a>
+                <a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Một số sản phẩm khác</a>
+              </div>
+            </li>
+
+            <!-- thông tin người dùng ở đây -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <%= message %>
+
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                <a class="dropdown-item" onclick="window.location.href='/'">Đăng xuất</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+          </form>
+          <!-- <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                Giỏ hàng của bạn</a>
+            </li>
+          </ul> -->
+        </div>
+      </nav>
+    </div>
+  </div>
+
+  <!-- Phần thân -->
+  <main style="margin-bottom: 30px;">
+    <div class="container mt-4">
+      <h1 class="text-center">Giỏ hàng</h1>
+      <div class="row">
+        <div class="col col-md-12">
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Ảnh đại diện</th>
+                <th>Tên sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+                <th style="text-align: center;" colspan="2">Hành động</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% product_detail.forEach((value,  index)=>{ %>
+                <tr>
+                  <td><%= index + 1 %></td>
+                  <td>
+                    <img style="width: 100px; height: 30px;" src="<%= value.img%>">
+                  </td>
+  
+                  <td><%= value.name%></td>
+                  <td class="text-right"><%= value.number %></td>
+                  <td class="text-right"><%= value.price %></td>
+                  <td class="text-right"><%= value.price %></td>
+                  <td style="text-align: center;">
+                    <form>
+                      <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham" href="/giohang/xoa/<%= value._id %>">
+                        <i class="fa fa-trash" aria-hidden="true"></i> xóa
+                      </a>
+                      <!-- <input type="submit" value="Xóa" /> -->
+                    </form>
+                    
+                  </td>
+                  <td style="text-align: center;">
+                    <a id="delete_1" style="background-color: #0fd8ff; border-color: #0fd8ff" data-sp-ma="2"
+                      class="btn btn-danger btn-delete-sanpham">
+                      <i class="fa fa-edit"aria-hidden="true">Sửa</i>
+                    </a>
+                  </td>
+                </tr>
+
+              <% }) %>
+             
+
+             
+              <!-- continue -->
+
+            </tbody>
+          </table>
+          <a href="#" class="btn btn-warning btn-md" onclick="window.location.href='/home'">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>&nbsp;Quay về trang chủ</a>
+          <a href="#" class="btn btn-primary btn-md">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Thanh toán</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ơhan cuoi -->
+  <div class="container-fluid" id="discount">
+    <div class="container discount-session-content">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-light text-capitalize">
+            Theo dõi chúng tôi
+          </h1><br />
+          <div class="social-icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h1>Đăng ký để được giảm giá<br /> phiếu giảm giá và ưu đãi mới!</h1>
+          <p class="discount-session-content-text">Công nghệ luôn luôn phát triển, bùng nổ trên từng
+            giai
+            đoạn,
+            đội ngủ chúng tôi
+            luôn chiến đấu với những sản phẩm công nghệ hiện đại, ....
+          </p><br />
+          <form class="form-inline">
+            <div class="form-group mx-sm-12 mb-2">
+              <label for="inputPassword2" class="sr-only">Mail Id</label>
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Enter Your Mail Id">
+              &nbsp; &nbsp;
+
+            </div>
+            <button type="submit" class="btn btn-danger text-light mb-2">LIÊN HỆ CHÚNG TÔI</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-12 text-center text-capitalize">
+        <h1>Đối tác thương hiệu của chúng tôi</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="owl-carousel owl-theme">
+      <div class="item"><img src="images/1.png" class="img-fluid"></div>
+      <div class="item"><img src="images/2.png" class="img-fluid"></div>
+      <div class="item"><img src="images/3.png" class="img-fluid"></div>
+      <div class="item"><img src="images/6.png" class="img-fluid"></div>
+      <div class="item"><img src="images/4.png" class="img-fluid"></div>
+      <div class="item"><img src="images/5.png" style="height: 100px;" class="img-fluid"></div>
+      <div class="item"><img src="images/7.png" class="img-fluid"></div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-6 payment-method">
+        <p class=" icon pt-5 pb-2"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></p>
+        <h2 class="text-capitalize">Thanh toán</h2>
+        <p class="payment-methode-text">VShop hỗ trợ các phương thức thanh toán sau:<br>
+          1. Thanh toán bằng Ví ShopeePay: áp dụng cho đơn hàng có giá trị cần thanh toán nhỏ hơn hoặc
+          bằng số
+          tiền có trong
+          Ví ShopeePay hoặc tài khoản ngân hàng có liên kết với ShopeePay (chi tiết)<br>
+          2. Thanh toán bằng thẻ ATM nội địa (Internet Banking): áp dụng cho thẻ ATM
+          có đăng ký dịch vụ internet banking và thuộc ngân hàng có liên kết với Shopee (chi tiết)
+          <br>
+          <a href="#" style="color: red;">Chi tiết hơn #</a>
+        </p><br />
+        <img class="img-fluid" src="images/payment_methods.jpg">
+      </div>
+      <div class="col-md-6 payment-method">
+        <p class=" icon pt-5 pb-2"><i class="fa fa-plane" aria-hidden="true"></i></p>
+        <h2 class="text-capitalize">VẬN CHUYỂN</h2>
+        <p class="payment-methode-text">Để thiết lập đơn vị vận chuyển và xử lý đơn hàng nhanh chóng,
+          đơn giản, Chúng ta cần biết cách giao hàng trên VShop và kích hoạt VShop Ship như thế nào.
+          Cùng đọc bài hướng dẫn dưới đây và hãy bắt đầu bằng việc thiết lập Đơn vị vận chuyển,
+          cân nặng và kích thước sau đóng gói cho sản phẩm để quy trình xử lý đơn hàng VShop của bạn
+          dễ
+          dàng
+          hơn
+          nhé!</p><br />
+        <a href="#" style="color: red;">Đọc thêm #</a>
+        <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Free delivery over $30 purches.</p>
+        <p><i class="fa fa-arrow-right" aria-hidden="true"></i> 2 days <strong>free delivery</strong>
+          only
+          for
+          <strong> prime members.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cuối cùng -->
+  <footer class="container-fluid mt-5">
+    <div class="container pt-5 pb-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>VSHOP.COM</h3>
+          <p>VSHOP.com hiện nay là ông vua bán lẻ trực tuyến khổng lồ có số lượng người bán hàng và
+            mua
+            hàng
+            cực
+            kì đông đảo, phạm vi hoạt động trên toàn thế giới, thương hiệu của họ luôn được đảm bảo
+            bằng
+            những
+            dịch vụ tốt và uy tín nhất. Mọi thứ quý khách cần đều có thể dễ dàng tìm kiếm tại VSHOP
+            vì
+            hàng
+            hóa
+            vô cùng đa dạng và phong phú cùng với mức giá cạnh tranh so với thị trường, từ những vật
+            dụng
+            sinh
+            hoạt hằng ngày cho đến những mặt hàng cao cấp và xa xỉ nhất ...</p>
+          <p>Chính vì thế VSHOP.vn được ra đời như là một e-commerce Việt Nam nhằm cung cấp cho quý
+            khách
+            hàng
+            dịch vụ
+            mua hàng VSHOp tại Việt Nam, và ship hàng VSHOp về Việt Nam sau đó vận chuyển đến tận
+            tay
+            quý
+            khách hàng một cách nhanh chóng, an toàn với chi phí tiết kiệm nhất...
+          </p>
+        </div>
+
+
+        <div class="col-md-3">
+          <h3>Sản phẩm cuối</h3>
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g4.jpg" alt=""
+              style="height: 100px; width: 100px;">
+            <div class="media-body">
+              <h5>Áo ngực trắng</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g6.jpg" alt=""
+              style="height: 100px; width: 100px;">
+            <div class="media-body">
+              <h5>Váy diện sexy</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+          <h3>Top Sản phẩm</h3>
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg" alt="">
+            <div class="media-body">
+              <h5>Quần bò xanh</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg" alt="">
+            <div class="media-body">
+              <h5>Vòng may mắn</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
