@@ -1,0 +1,176 @@
+#myDIV {
+  height: 70px;
+  width: 250px;
+}
+#myDIV1 {
+  height: 70px;
+  width: 250px;
+}
+
+#myDIV2 {
+  height: 70px;
+  width: 250px;
+}
+
+#myDIV3 {
+  height: 50px;
+  width: 250px;
+}
+
+#myDIV4 {
+  height: 100px;
+  width: 250px;
+}
+
+#myDIV5 {
+  height: 50px;
+  width: 250px;
+}
+
+#myDIV6 {
+  height: 20px;
+  width: 250px;
+}
+
+#myDIV7 {
+  height: 20px;
+  width: 250px;
+}
+
+#myDIV8 {
+  height: 160px;
+  width: 250px;
+}
+
+#myDIV9 {
+  height: 150px;
+  width: 250px;
+}
+
+.icon-item-myDIV {
+  margin-top: 8px;
+}
+
+.span-one:hover {
+  background: rgba(216, 209, 209, 0.384);
+}
+.span-one {
+  cursor: pointer;
+}
+
+.lopA a {
+  color: black; 
+}
+.hover-classA {
+  cursor: pointer;
+}
+ 
+
+/* ben phai */
+
+.main-content {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.list-notify__item:hover {
+  color: blue;
+}
+
+.body-todo__item:hover {
+  background-color: rgba(226, 231, 231, 0.171);
+  border-radius: 5%;
+}
+
+.row>a {
+  text-decoration: none;
+  color: black;
+}
+
+ul>li {
+  list-style: none;
+  padding: 0;
+  list-style-type: none;
+}
+.notification-list-thongbao-hover:hover {
+  color: red;
+}
+
+/*  */
+
+.list-item:hover {
+  background-color: rgb(49, 59, 59);
+  border-radius: 50%;
+}
+
+.tuychon:hover .notification-list {
+  display: block;
+}
+
+.thongbao:hover .notification-list-thongbao {
+  display: block;
+}
+
+.cart-item:hover {
+  background-color: rgb(175, 89, 157);
+  border-radius: 50%;
+}
+
+.notification-list {
+  display: none;
+  width: 300px;
+  height: 370px;
+  position: absolute;
+  top: 68px;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  right: 20px;
+  background: white;
+  padding: 20px;
+  z-index: 1;
+}
+
+.notification-list-thongbao {
+  display: none;
+  width: 400px;
+  height: 370px;
+  position: absolute;
+  top: 68px;
+  box-shadow: 0 0 10px black;
+  cursor: pointer;
+  right: 20px;
+  background: white;
+  z-index: 1;
+}
+
+
+.allone {
+  width: 80px;
+}
+
+.for-all-one {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.for-all-two {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  margin-bottom: 15px;
+}
+
+.for-all-three {
+  display: flex;
+  height: 100px;
+}
+
+
+.header-notification {
+  display: flex;
+  padding: 20px 20px 0 20px;
+  border-bottom: 0.1px solid rgb(51, 47, 47);
+  justify-content: space-between;
+}

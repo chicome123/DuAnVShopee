@@ -1,0 +1,955 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/counter.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/admin.css">
+</head>
+
+<body>
+
+  <div class="container-fluid" style="background-color: #000000;">
+    <div class="container" style="max-width: 100%;">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
+          href="/home">HOME-VShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Hi!
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                <a style="cursor: pointer;" class="dropdown-item" onclick="window.location.href='/'">Đăng xuất</a>
+              </div>
+            </li>
+          </ul>
+
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+          </form>
+
+          <div class="tuychon" style="display: flex; margin-left: 50px;">
+
+            <div class="list-item" style="width: 60px;
+							height: 60px;
+							color: aqua;
+              cursor: pointer;
+							padding: 20px;
+    						border-radius: 50%;
+							">
+              <i class="fa fa-list-alt" aria-hidden="true"></i>
+            </div>
+            <!-- hop thoai tuy chon -->
+            <div class="notification-list">
+              <div class="for-all-one">
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Sản phẩm</p>
+                </div>
+
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Danh mục của Shop</p>
+                </div>
+
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Đơn hàng</p>
+                </div>
+              </div>
+
+              <div class="for-all-two">
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Kênh Marketing</p>
+                </div>
+
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Doanh thu</p>
+                </div>
+
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Ví VShop</p>
+                </div>
+              </div>
+
+              <div class="for-all-three">
+                <div class="allone">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Phân tích bán hàng</p>
+                </div>
+
+                <div class="allone" style="margin-left: 10px;">
+                  <a href="#">
+                    <div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+                      <i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+                    </div>
+                  </a>
+                  <div class="sanpham"></div>
+                  <p>Thiết lập Shop</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- thong bao -->
+          <div class="thongbao">
+            <div class="cart-item" style="width: 60px;
+							border-radius: 50%;
+							height: 60px;
+							color: aqua;
+              cursor: pointer;
+							padding: 20px;">
+              <i style="padding-left: 1.5px;" class="fa fa-bell"></i>
+            </div>
+
+            <div class="notification-list-thongbao">
+              <div class="header-notification">
+                <p style="font-size: 13px;">Thông báo đã nhận gần đây</p>
+                <p class="notification-list-thongbao-hover" style="font-size: 13px;">Đánh dấu đã đọc tất cả</p>
+              </div>
+              <div style="padding: 20px;">
+                <p>Thông báo là một biểu mẫu được sử dụng thường xuyên trong các
+                  cơ quan, doanh nghiệp, đơn vị khi cần thông báo về một vấn đề, một nội dung nào đó tới một cá nhân
+                  trong đơn vị hay toàn bộ các thành viên trong đơn vị đó. Mẫu thông báo phải được soạn thảo theo đúng
+                  quy tắc của một văn bản hành chính, cách trình bày rõ ràng, bố cục hợp lý thể hiện tác phong làm việc
+                  chuyên nghiệp của đơn vị đó.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </nav>
+    </div>
+  </div>
+  <!-- ben trai -->
+  <main class="app__main">
+    <div class="container-1" style="background: #e0e0e061;">
+      <div class="row" style="max-width: 100%;">
+        <div class="col col-2" style="max-width: 300px;
+        border-right: 1px solid #e8e8e8;
+        height: 900px;
+        background: white;
+        overflow-x: hidden;
+        overflow-y: auto;">
+          <div class="main-filter" style="padding: 20px 0 0 20px;">
+
+            <div class="lopA">
+              <div onclick="myA()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Vận chuyển
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Quản Lý Vận Chuyển</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Giao Hàng Loạt</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Cài Đặt Vận chuyển</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myB()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Quản Lý Đơn Hàng
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV1" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Tất cả</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Hủy Đơn</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Trả Hàng/Hoàn Tiền</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myC()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Quản Lý Sản Phẩm
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV2" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Tất Cả Sản Phẩm</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" onclick="window.location.href='/themsanpham'" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Thêm Sản Phẩm</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Sản Phẩm Vi Phạm</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myD()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Kênh Marketing
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV3" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Kênh Marketing</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Quảng Cáo VShop</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myE()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Tài Chính
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV4" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Doanh Thu</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Số Dư Tài Khoản VShop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Tài Khoản Ngân Hàng</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Thiết Lập Thanh Toán</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myG()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Dữ Liệu
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV5" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Phân Tích Bán Hàng</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-bottom: 0;">
+                  <li>
+                    <a> <span>Hiệu Quả Hoạt Động</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px; margin-bottom: 20px;">
+              <div onclick="myF()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Phát Triển
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV6" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Shop Yêu Thích</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myH()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Chăm Sóc Khách Hàng
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV7" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Trợ Lý Chat</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myI()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Quản Lý Shop
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV8" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Đánh Giá Shop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Hồ Sơ Shop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Trang Trí Shop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Danh Mục Của Shop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Báo Cáo Của tôi</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="lopA" style="margin-top: 20px;">
+              <div onclick="myJ()" style="display: flex; align-items: center;">
+                <i class="main-filter__category-head-title-icon fas fa-bus"></i>
+                <div class="hover-classA"
+                  style="text-decoration: none; margin-left: 16px; width: 200px; font-weight: bold;">
+                  Thiết Lập Shop
+                </div>
+                <i class="fa fa-chevron-circle-down"></i>
+              </div>
+              <div id="myDIV9" aria-labelledby="navbarDropdown">
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Địa Chỉ</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Thiết Lập Shop</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Tài Khoản</span> </a>
+                  </li>
+                </ul>
+                <ul class="span-one" style="margin-top: 10px; margin-bottom: 0;">
+                  <li>
+                    <a> <span>Nền Tảng Đối Tác (Kết nối API)</span> </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- ben phai -->
+
+
+        <div class="col col-10">
+          <div class="main-content" style="display: flex;">
+
+            <div class="header-bentrai" style="max-width: 800px; margin: 20px 20px 0 40px;">
+              <div class="main-content__head">
+                <img class="main-content__head-img" style="width: 800px;
+                height: 100px; margin-bottom: 20px;" src="/images/nguoiban/ac.png" alt="">
+              </div>
+
+              <div class="main-content__body" style="padding: 20px; background: white;">
+                <div class="main-content__body-todo">
+                  <div class="body-todo__title" style="font-weight: bold; font-size: 20px;">Danh sách cần làm</div>
+                  <div class="body-todo__subtitle" style="font-size: 14px;">Những việc bạn sẽ phải làm</div>
+                  <div class="body-todo__list" style="height: 150px;">
+                    <div class="row" style="text-align: center; margin-top: 20px;">
+                      <a href="#" class="col col-3" style="text-decoration: none; padding: 20px;">
+                        <div class="body-todo__item"
+                          style="color: #000000; border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="text-decoration: none; padding: 20px;">
+                        <div class="body-todo__item"
+                          style="color: #000000; border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 20px;">
+                        <div class="body-todo__item"
+                          style="color: #000000; border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 20px;">
+                        <div class="body-todo__item">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 0 20px 0 20px;">
+                        <div class="body-todo__item" style="border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 0 20px 0 20px;">
+                        <div class="body-todo__item" style="border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 0 20px 0 20px;">
+                        <div class="body-todo__item" style="border-right: 1px solid rgba(214, 205, 205, 0.356);">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                      <a href="#" class="col col-3" style="padding: 0 20px 0 20px;">
+                        <div class="body-todo__item">
+                          <div class="body-todo__item-num">0</div>
+                          <div class="body-todo__item-status body-todo__item-status--new">Chờ xác nhận</div>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="header-bentrai-cot2" style="background: white;
+                                                    width: 300px;
+                                                    height: 250px;
+                                                    margin-top: 20px;
+                                                    padding: 20px;">
+              <div class="navbar-nav__list-notify">
+
+                <div class="list-notify">
+                  <div class="list-notify__head"
+                    style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="thongbao-bentrai">
+                      <h4 class="list-notify__head-label">Thông báo</h4>
+                    </div>
+                    <div class="list-notify__head-action">
+                      <a href="#" class="list-notify__head-action-view">
+                        Xem thêm
+                        <i class="list-notify__head-action-icon fas fa-chevron-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                  <div class="list-notify__body">
+
+                    <a href="#" style="text-decoration: none;">
+                      <div class="list-notify__item">
+                        <div class="list-notify__item-title" style="font-weight: bold;">
+                          X2 đơn với Flash Sale của Shop</div>
+                        <div class="list-notify__item-content" style="font-size: 14px;">Tạo chương trình Flash Sale chỉ
+                          với 03 bước đơn giản: ✅
+                          Bước 1: Vào Kênh Người Bán ✅ Bước 2: Vào Kênh Marketing > Flash Sale của Shop ✅ Bước 3: Tạo
+                          chương trình Flash Sale và thêm sản phẩm Tạo ngay TẠI ĐÂY để
+                        </div>
+                        <div class="list-notify__item-date">
+                          <span class="list-notify__item-status" style="color: red; font-size: 14px;">Mới</span>
+                          <span class="list-notify__item-time" style="font-size: 14px;">Hôm nay 00:14</span>
+                        </div>
+                      </div>
+                    </a>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+
+  <!-- phần cuối -->
+  <div class="container-fluid" id="discount">
+    <div class="container discount-session-content">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-light text-capitalize">
+            Theo dõi chúng tôi
+          </h1><br />
+          <div class="social-icons">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <h1>Đăng ký để được giảm giá<br /> phiếu giảm giá và ưu đãi mới!</h1>
+          <p class="discount-session-content-text">Công nghệ luôn luôn phát triển, bùng nổ trên từng
+            giai
+            đoạn,
+            đội ngủ chúng tôi
+            luôn chiến đấu với những sản phẩm công nghệ hiện đại, ....
+          </p><br />
+          <form class="form-inline">
+            <div class="form-group mx-sm-12 mb-2">
+              <label for="inputPassword2" class="sr-only">Mail Id</label>
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Enter Your Mail Id">
+              &nbsp; &nbsp;
+
+            </div>
+            <button type="submit" class="btn btn-danger text-light mb-2">LIÊN HỆ CHÚNG TÔI</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-12 text-center text-capitalize">
+        <h1>Đối tác thương hiệu của chúng tôi</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="owl-carousel owl-theme">
+      <div class="item"><img src="images/1.png" class="img-fluid"></div>
+      <div class="item"><img src="images/2.png" class="img-fluid"></div>
+      <div class="item"><img src="images/3.png" class="img-fluid"></div>
+      <div class="item"><img src="images/6.png" class="img-fluid"></div>
+      <div class="item"><img src="images/4.png" class="img-fluid"></div>
+      <div class="item"><img src="images/5.png" style="height: 100px;" class="img-fluid"></div>
+      <div class="item"><img src="images/7.png" class="img-fluid"></div>
+    </div>
+  </div>
+
+  <div class="container mt-5 mb-5">
+    <div class="row">
+      <div class="col-md-6 payment-method">
+        <p class=" icon pt-5 pb-2"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></p>
+        <h2 class="text-capitalize">Thanh toán</h2>
+        <p class="payment-methode-text">VShop hỗ trợ các phương thức thanh toán sau:<br>
+          1. Thanh toán bằng Ví ShopeePay: áp dụng cho đơn hàng có giá trị cần thanh toán nhỏ hơn hoặc
+          bằng số
+          tiền có trong
+          Ví ShopeePay hoặc tài khoản ngân hàng có liên kết với ShopeePay (chi tiết)<br>
+          2. Thanh toán bằng thẻ ATM nội địa (Internet Banking): áp dụng cho thẻ ATM
+          có đăng ký dịch vụ internet banking và thuộc ngân hàng có liên kết với Shopee (chi tiết)
+          <br>
+          <a href="#" style="color: red;">Chi tiết hơn #</a>
+        </p><br />
+        <img class="img-fluid" src="images/payment_methods.jpg">
+      </div>
+      <div class="col-md-6 payment-method">
+        <p class=" icon pt-5 pb-2"><i class="fa fa-plane" aria-hidden="true"></i></p>
+        <h2 class="text-capitalize">VẬN CHUYỂN</h2>
+        <p class="payment-methode-text">Để thiết lập đơn vị vận chuyển và xử lý đơn hàng nhanh chóng,
+          đơn giản, Chúng ta cần biết cách giao hàng trên VShop và kích hoạt VShop Ship như thế nào.
+          Cùng đọc bài hướng dẫn dưới đây và hãy bắt đầu bằng việc thiết lập Đơn vị vận chuyển,
+          cân nặng và kích thước sau đóng gói cho sản phẩm để quy trình xử lý đơn hàng VShop của bạn
+          dễ
+          dàng
+          hơn
+          nhé!</p><br />
+        <a href="#" style="color: red;">Đọc thêm #</a>
+        <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Free delivery over $30 purches.</p>
+        <p><i class="fa fa-arrow-right" aria-hidden="true"></i> 2 days <strong>free delivery</strong>
+          only
+          for
+          <strong> prime members.</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cuối cùng -->
+  <footer class="container-fluid mt-5">
+    <div class="container pt-5 pb-5">
+      <div class="row">
+        <div class="col-md-6">
+          <h3>VSHOP.COM</h3>
+          <p>VSHOP.com hiện nay là ông vua bán lẻ trực tuyến khổng lồ có số lượng người bán hàng và
+            mua
+            hàng
+            cực
+            kì đông đảo, phạm vi hoạt động trên toàn thế giới, thương hiệu của họ luôn được đảm bảo
+            bằng
+            những
+            dịch vụ tốt và uy tín nhất. Mọi thứ quý khách cần đều có thể dễ dàng tìm kiếm tại VSHOP
+            vì
+            hàng
+            hóa
+            vô cùng đa dạng và phong phú cùng với mức giá cạnh tranh so với thị trường, từ những vật
+            dụng
+            sinh
+            hoạt hằng ngày cho đến những mặt hàng cao cấp và xa xỉ nhất ...</p>
+          <p>Chính vì thế VSHOP.vn được ra đời như là một e-commerce Việt Nam nhằm cung cấp cho quý
+            khách
+            hàng
+            dịch vụ
+            mua hàng VSHOp tại Việt Nam, và ship hàng VSHOp về Việt Nam sau đó vận chuyển đến tận
+            tay
+            quý
+            khách hàng một cách nhanh chóng, an toàn với chi phí tiết kiệm nhất...
+          </p>
+        </div>
+
+
+        <div class="col-md-3">
+          <h3>Sản phẩm cuối</h3>
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g4.jpg" alt=""
+              style="height: 100px; width: 100px;">
+            <div class="media-body">
+              <h5>Áo ngực trắng</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g6.jpg" alt=""
+              style="height: 100px; width: 100px;">
+            <div class="media-body">
+              <h5>Váy diện sexy</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <div class="col-md-3">
+          <h3>Top Sản phẩm</h3>
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg" alt="">
+            <div class="media-body">
+              <h5>Quần bò xanh</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg" alt="">
+            <div class="media-body">
+              <h5>Vòng may mắn</h5>
+              <del>$80</del> &nbsp; $70
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="javascripts/applogin.js"></script>
+  <script src="javascripts/owl.carousel.min.js"></script>
+  <script>
+
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      responsiveClass: true,
+      responsive: {
+        0: {
+          items: 1,
+          nav: true
+        },
+        600: {
+          items: 3,
+          nav: false
+        },
+        1000: {
+          items: 4,
+          nav: false,
+          loop: false
+        }
+      }
+    })
+
+
+    function myA() {
+      var x = document.getElementById("myDIV");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myB() {
+      var x = document.getElementById("myDIV1");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myC() {
+      var x = document.getElementById("myDIV2");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myD() {
+      var x = document.getElementById("myDIV3");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myE() {
+      var x = document.getElementById("myDIV4");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myG() {
+      var x = document.getElementById("myDIV5");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myF() {
+      var x = document.getElementById("myDIV6");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myH() {
+      var x = document.getElementById("myDIV7");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myI() {
+      var x = document.getElementById("myDIV8");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+    function myJ() {
+      var x = document.getElementById("myDIV9");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+
+</html>

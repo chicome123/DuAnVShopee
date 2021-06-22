@@ -33,7 +33,7 @@ const FindAllProduct = ()=>{
     })
 }
 
-// // Truy van san pham theo _id
+//  Truy van san pham theo _id
 // const FindOneProduct = (id) =>{
 //   console.log(id)
 //     return new Promise(resolve=>{ // resolve đóng vai trò như 1 return của 1 hàm
@@ -49,6 +49,36 @@ const FindAllProduct = ()=>{
 //           });
 //     })
 // }
+
+// bang them san pham den trang sanphamchitiet : sanphamchitiet.ejs
+// const CreateProductDatabase = () => {
+//   MongoClient.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+//     var sql = 
+//     "CREATE TABLE customers (tensanpham VARCHAR(255), tenhang VARCHAR(255), output , motasanpham VARCHAR(255), soluong int, giasanpham float";  
+//     con.query(sql, function (err, result) {
+//       if (err) throw err;
+//       console.log("Table created");
+//     });
+//   });
+// }
+
+
+// bang them san pham den trang home : index.ejs
+// const CreateProductDatabaseChitiet = () => {
+//   MongoClient.connect(function(err) {
+//     if (err) throw err;
+//     console.log("Connected!");
+//     var sql = 
+//     "CREATE TABLE customers (tensanpham VARCHAR(255), tenhang VARCHAR(255), output , soluong int, giasanpham float";  
+//     con.query(sql, function (err, result) {
+//       if (err) throw err;
+//       console.log("Table created");
+//     });
+//   });
+// }
+
 
 
 module.exports = {

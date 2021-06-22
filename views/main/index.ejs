@@ -24,7 +24,7 @@
 		<div class="container" style="max-width: 100%;">
 			<nav class="navbar navbar-expand-lg">
 				<a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
-					href="/">HOME-VShop</a>
+					href="/home">HOME-VShop</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
 					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
 					aria-label="Toggle navigation">
@@ -34,7 +34,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/admin">Kênh người bán <span class="sr-only">(current)</span></a>
 						</li>
 
 						<li class="nav-item dropdown">
@@ -68,16 +68,22 @@
 						</li>
 
 						<!-- thông tin người dùng ở đây -->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<%= username %>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Thông tin tài khoản</a>
-								<a class="dropdown-item" onclick="window.location.href='/'">Đăng xuất</a>
-							</div>
-						</li>
+					
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<%= username %>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="/infoCustomer">Thông tin tài khoản</a>
+									<a class="dropdown-item" style="cursor: pointer;" onclick="window.location.href='/'">Đăng xuất</a>
+								</div>
+							</li>
+
+							
+						
+						
+						
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm"
@@ -86,7 +92,7 @@
 					</form>
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a onclick="window.location.href='/giohang'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
+							<a style="cursor: pointer;" onclick="window.location.href='/giohang'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
 									aria-hidden="true"></i> Giỏ hàng của bạn</a>
 						</li>
 					</ul>
@@ -107,9 +113,14 @@
 				<div class="container">
 					
 					<!-- Nooij that -->
-					<div class="noithat" style="padding-bottom: 20px; border-bottom: 2px solid black;">
-						<div class="title-box">
-							<h2>Hàng nội thất</h2>
+					<div class="noithat" style="padding-bottom: 20px;
+					border-bottom: 2px solid black;
+					margin-top: 40px;">
+						<div class="form-header-one-all" style="display: flex;">
+							<h3 style="margin-right: 30px;"><%= username %></h3>
+							<div class="title-box">
+								<h2>Hàng nội thất</h2>
+							</div>
 						</div>
 						<div class="row">
 
@@ -118,7 +129,6 @@
 									<div class="product-top">
 										<img src="<%= value.img %>">
 
-									
 										<div class="overlay-right">
 											<button type="button" class="btn btn-secondary" onclick="window.location.href='/sanphamchitiet'" title="Quick Shop">
 												<i class="fa fa-eye"></i>
@@ -177,11 +187,10 @@
 						</div>
 					</div>
 		
-					
-
 				</div>
 			</div>
 		</section>
+		
 		<%- include('../partials/middle-fotter'); %>
 		
 

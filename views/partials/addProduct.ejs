@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/counter.css">
+	<link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+	<link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/stylesheets/style.css">
+	<link rel="stylesheet" href="/stylesheets/addproduct.css">
+	<title>Thêm sản phẩm</title>
+</head>
+
+<body>
+	<!-- phần đầu -->
+
+	<div class="container-fluid" style="background-color: #000000;">
+		<div class="container" style="max-width: 100%;">
+			<nav class="navbar navbar-expand-lg">
+				<a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
+					href="/">HOME-VShop</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+						</li>
+					</ul>
+
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								Hi! <%= message %>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="#">Thông tin tài khoản</a>
+								<a style="cursor: pointer;" class="dropdown-item"
+									onclick="window.location.href='/'">Đăng xuất</a>
+							</div>
+						</li>
+					</ul>
+
+					<form class="form-inline my-2 my-lg-0">
+						<input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm"
+							aria-label="Search">
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+					</form>
+
+					<div class="tuychon" style="display: flex; margin-left: 50px;">
+
+						<div class="list-item" style="width: 60px;
+							height: 60px;
+							color: aqua;
+							padding: 20px;
+    						border-radius: 50%;
+							">
+							<i class="fa fa-list-alt" aria-hidden="true"></i>
+						</div>
+						<!-- hop thoai tuy chon -->
+						<div class="notification-list">
+							<div class="for-all-one">
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Sản phẩm</p>
+								</div>
+
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Danh mục của Shop</p>
+								</div>
+
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Đơn hàng</p>
+								</div>
+							</div>
+
+							<div class="for-all-two">
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Kênh Marketing</p>
+								</div>
+
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Doanh thu</p>
+								</div>
+
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Ví VShop</p>
+								</div>
+							</div>
+
+							<div class="for-all-three">
+								<div class="allone">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Phân tích bán hàng</p>
+								</div>
+
+								<div class="allone" style="margin-left: 10px;">
+									<a href="#">
+										<div class="list-item-notif" style="width: 60px;
+											height: 60px;
+											background: #c72c2c;
+											color: white;
+											padding: 20px;
+											border-radius: 50%;
+											">
+											<i style="padding: 3px;" class="fa fa-gift" aria-hidden="true"></i>
+										</div>
+									</a>
+									<div class="sanpham"></div>
+									<p>Thiết lập Shop</p>
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<!-- thong bao -->
+					<div class="thongbao">
+						<div class="cart-item" style="width: 60px;
+							border-radius: 50%;
+							height: 60px;
+							color: aqua;
+							padding: 20px;">
+							<i style="padding-left: 1.5px;" class="fa fa-bell"></i>
+						</div>
+
+						<div class="notification-list-thongbao">
+							<div class="header-notification">
+								<p style="font-size: 13px;">Thông báo đã nhận gần đây</p>
+								<p style="font-size: 13px;">Đánh dấu đã đọc tất cả</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</nav>
+		</div>
+	</div>
+	<!-- phan than -->
+
+	<div class="container-middle" style="margin-bottom: 20px;">
+		<div class="container-body-middle">
+			<form action="/themsanpham" method="POST">
+				<div class="header-form-one" style="border-bottom: 1px solid rgba(82, 75, 75, 0.26);">
+					<h1>Thêm 1 sản phẩm mới </h1>
+					<p>Vui lòng chọn ngành hàng phù hợp cho sản phẩm của bạn.</p>
+				</div>
+				<div class="header-form-two" style="height: 100px; padding: 20px 0 20px 20px;
+				display: flex; align-items: center;">
+					<p style="align-items: center;
+					padding-top: 15px; width: 120px;">Tên sản phẩm:</p>
+					<input type="text" style="width: 1000px; height: 40px;
+					margin-left: 30px; padding-left: 10px;" placeholder="Nhập vào" class="shadow-none"
+					id="tensanpham">
+				</div>
+
+				<div class="header-form-all-three">
+					<div style="display: flex;
+						width: 100%;
+						height: 80px;
+						align-items: center;
+						padding: 20px;">
+						<div style="width: 300px; margin-right: 20px;">
+							<i class="icon-item-header fa fa-search" aria-hidden="true"></i>
+							<input class="pmp" type="text" placeholder="Tên hàng"
+							id="tenhang">
+						</div>
+						<div style="display: flex; align-items: center;">
+							<p style="padding-top: 15px; margin-right: 5px;">Chọn ngành hàng chính xác, </p>
+							<a href="#"> bấm vào đây để tìm hiểu</a>
+						</div>
+					</div>
+
+					<div class="form-header-task-3">
+						<div class="all-images">
+							<div class="book-images">
+								<p style="width: 200px;">Hình ảnh sản phẩm</p>
+								<div class="img1-book-images">
+									<div class="img1">
+										<p class="img-2">
+										
+											
+											<img width="100px" height="100px" id="output" />
+										</p>
+										<p><input type="file" accept="image/*" name="image" id="file"
+												onchange="loadFile(event)" style="display: none;"></p>
+										<label for="file" class="img col" style="cursor: pointer;">
+											<span><i class="fa fa-plus"></i>
+											</span>
+										</label>
+										<p>* Ảnh bìa</p>
+									</div>
+
+									<div class="img1">
+										<input type="file" accept="image/*" name="image" id="file"
+											style="display: none;">
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 1</p>
+									</div>
+									<div class="img1">
+										<input type="file" id="uploadfile" hidden />
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 2</p>
+									</div>
+									<div class="img1">
+										<input type="file" id="uploadfile" hidden />
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 3</p>
+									</div>
+									<div class="img1">
+										<input type="file" id="uploadfile" hidden />
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 4</p>
+									</div>
+									<div class="img1">
+										<input type="file" id="uploadfile" hidden />
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 5</p>
+									</div>
+									<div class="img1">
+										<input type="file" id="uploadfile" hidden />
+										<div class="img col" id="btnfile">
+											<span><i class="fa fa-plus"></i></span>
+										</div>
+										<p>Hình ảnh 6</p>
+									</div>
+								</div>
+
+							</div>
+							<div class="img1-book-images" style="margin-left: 200px;">
+								<div class="img1">
+									<input type="file" id="uploadfile" hidden />
+									<div class="img col" id="btnfile">
+										<span><i class="fa fa-plus"></i></span>
+									</div>
+									<p>Hình ảnh 7</p>
+								</div>
+								<div class="img1">
+									<input type="file" id="uploadfile" hidden />
+									<div class="img col" id="btnfile">
+										<span><i class="fa fa-plus"></i></span>
+									</div>
+									<p>Hình ảnh 8</p>
+								</div>
+								<div class="img1">
+									<input type="file" id="uploadfile" hidden />
+									<div class="img col" id="btnfile">
+										<span><i class="fa fa-plus"></i></span>
+									</div>
+									<p>Hình ảnh 9</p>
+								</div>
+								<div class="img1">
+									<input type="file" id="uploadfile" hidden />
+									<div class="img col" id="btnfile">
+										<span><i class="fa fa-plus"></i></span>
+									</div>
+									<p>Hình ảnh 10</p>
+								</div>
+
+							</div>
+						</div>
+
+						<div class="video-product-form" style="display: flex;">
+							<div class="book-images">
+								<p style="width: 200px;">Hình ảnh sản phẩm</p>
+							</div>
+							<div class="img1">
+								<input type="file" id="uploadfile" hidden />
+								<div class="img col" id="btnfile">
+									<span><i class="fa fa-plus"></i></span>
+								</div>
+								<p>Videos</p>
+							</div>
+						</div>
+					</div>
+
+					<!--  Mo ta san pham -->
+
+					<div class="video-product-form"
+						style="display: flex; padding: 20px; margin-top: 20px; margin-left: 20px;">
+						<div class="book-images">
+							<p style="width: 150px;">Mô tả sản phẩm</p>
+						</div>
+						<textarea name="motasanpham" id="motasanpham" cols="125" rows="9" style="padding: 20px;"></textarea>
+					</div>
+
+					<!-- So luong san pham  -->
+					
+					<div class="book-form-select" style="padding: 20px;">
+						<p style="width: 150px;
+						text-align: center; padding: 10px; margin-right: 20px;">Số lượng</p>
+						<input style="height: 40px;
+							border: 1px solid #000000c2;
+							border-radius: 5px;
+							width: 500px;
+							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào"
+							id="soluong">
+					</div>
+
+					<!-- Gia ca san pham -->
+
+					<div class="book-form-select" style="padding: 20px;">
+						<p style="width: 150px;
+						text-align: center; padding: 10px; margin-right: 20px;">Giá</p>
+						<input style="height: 40px;
+							border: 1px solid #000000c2;
+							border-radius: 5px;
+							width: 500px;
+							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào"
+							id="giasanpham">
+					</div>
+
+					<!-- Thuong hieu san pham -->
+
+					<div class="book-form-select" style="padding: 20px;">
+						<p style="width: 150px;
+						text-align: center; padding: 10px; margin-right: 20px;">Thương hiệu</p>
+						<div class="lopA">
+							<div onclick="myA()" style="display: flex; align-items: center;">
+								<div style="text-decoration: none; margin-left: 16px; width: 450px; font-weight: bold;">
+									Vui lòng chọn
+								</div>
+								<i class="fa fa-chevron-circle-down"></i>
+							</div>
+							<div id="myDIV">
+								<div class="mydiv-form-one" onclick="myfunctionB1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionB1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionB1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionB1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionB1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- san pham xuat su -->
+					
+					<div class="book-form-select" style="padding: 20px;">
+						<p style="width: 150px;
+						text-align: center; padding: 10px; margin-right: 20px;">Xuất xứ</p>
+						<div class="lopA">
+							<div onclick="myB()" style="display: flex; align-items: center;">
+								<div style="text-decoration: none; margin-left: 16px; width: 450px; font-weight: bold;">
+									Vui lòng chọn
+								</div>
+								<i class="fa fa-chevron-circle-down"></i>
+							</div>
+							<div id="myDIV1">
+								<div class="mydiv-form-one" onclick="myfunctionA1();">
+									<span class="mydiv-form-one-new">Việt Nam</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionA1();">
+									<span class="mydiv-form-one-new">Trung Quốc</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionA1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionA1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+								<div class="mydiv-form-two" onclick="myfunctionA1();">
+									<span class="mydiv-form-one-new">ABC</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Thong tin khac -->
+					
+					<div class="info-khac">
+						<h4>Thông tin khác</h4>
+						<div class="one-for-all-form-one">
+							<div class="checkout-form" style="display: flex;">
+								<p style="padding-top: 20px; margin-right: 40px;
+								margin-left: 100px;">Hàng đặt trước</p>
+								<div class="one-hunder" style="width: 100px;
+								display: flex;
+								align-items: center;">
+									<input type="radio" name="one" onclick="checkOut1();" value="Không">
+									<p style="padding-top: 16px; margin-left: 10px;">Không</p>
+								</div>
+								<div class="one-hunder" style="width: 100px;
+								display: flex;
+								align-items: center;">
+									<input type="radio" name="one" onclick="checkOut2();" value="Không">
+									<p style="padding-top: 16px; margin-left: 10px;">Đồng ý</p>
+								</div>
+							</div>
+							<p id="khong" style="margin-left: 250px;
+								width: 700px;
+								display: none;
+								font-size: 15px;">
+								Tôi sẽ gửi hàng trong 2 ngày (không bao gồm các ngày nghỉ lễ, Tết và những ngày đơn vị
+								vận
+								chuyển không làm việc)
+							</p>
+
+							<div id="dongy" class="three-header-form"
+								style="display: flex; display: none; margin-left: 250px;">
+								<p>Tôi cần </p>
+								<input style="    width: 50px;
+								margin: 0 10px 0 10px;
+								height: 30px;
+								border: 1px solid #c3baba;
+								border-radius: 5px;" id="storeId" min="7" pattern="[0-9]" onkeypress="return !(event.charCode == 46)" step="1"
+									title="Must be an integer number" type="number" value="7">
+								<p> ngày để chuẩn bị hàng (tối thiểu: 7 ngày - tối đa: 30 ngày)</p>
+							</div>
+						</div>
+
+						<!-- tinh trang san pham co con hieu luc -->
+
+						<div class="book-form-select" style="padding: 20px; margin-left: 40px;">
+							<p style="width: 150px;
+							text-align: center; padding: 10px; margin-right: 40px;">Tình trạng</p>
+							<div class="lopA">
+								<div onclick="myC()" style="display: flex; align-items: center;">
+									<div
+										style="text-decoration: none; margin-left: 16px; width: 450px; font-weight: bold;">
+										Vui lòng chọn
+									</div>
+									<i class="fa fa-chevron-circle-down"></i>
+								</div>
+								<div id="myDIV-A">
+									<div class="mydiv-form-one" onclick="myfunctionA2();">
+										<span class="mydiv-form-one-new">Mới</span>
+									</div>
+									<div class="mydiv-form-two" onclick="myfunctionA2();">
+										<span class="mydiv-form-one-new">Đã sử dụng</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="book-form-select" style="padding: 20px; margin-left: 50px;">
+							<p style="width: 150px;
+							text-align: center; padding: 10px; margin-right: 30px;">SKU sản phẩm</p>
+							<input style="height: 40px;
+								border: 1px solid #000000c2;
+								border-radius: 5px;
+								width: 500px;
+								padding-left: 20px;" type="text" placeholder="Vui lòng điền vào">
+						</div>
+					</div>
+					
+					<div class="footer" style="padding: 20px;">
+						<button class="cmos" onclick="Cancel();">Hủy</button>
+						<button class="cmos" onclick="SaveAndHide();">Lưu & Ẩn</button>
+						<button class="cmoss" onclick="Save();" style="background-color: #ee4d2d; color: white;">
+							Lưu & hiển thị</button>
+					</div>
+				</div>
+
+
+			</form>
+		</div>
+	</div>
+
+
+
+	<!-- lasted-form-end -->
+	<div class="lasted-form-end">
+		<!-- phần cuối -->
+		<div class="container-fluid" id="discount">
+			<div class="container discount-session-content">
+				<div class="row">
+					<div class="col-md-6">
+						<h1 class="text-light text-capitalize">
+							Theo dõi chúng tôi
+						</h1><br />
+						<div class="social-icons">
+							<i class="fa fa-facebook" aria-hidden="true"></i>
+							<i class="fa fa-twitter" aria-hidden="true"></i>
+							<i class="fa fa-instagram" aria-hidden="true"></i>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<h1>Đăng ký để được giảm giá<br /> phiếu giảm giá và ưu đãi mới!</h1>
+						<p class="discount-session-content-text">Công nghệ luôn luôn phát triển, bùng nổ trên từng
+							giai
+							đoạn,
+							đội ngủ chúng tôi
+							luôn chiến đấu với những sản phẩm công nghệ hiện đại, ....
+						</p><br />
+						<form class="form-inline">
+							<div class="form-group mx-sm-12 mb-2">
+								<label for="inputPassword2" class="sr-only">Mail Id</label>
+								<input type="password" class="form-control" id="inputPassword2"
+									placeholder="Enter Your Mail Id">
+								&nbsp; &nbsp;
+
+							</div>
+							<button type="submit" class="btn btn-danger text-light mb-2">LIÊN HỆ CHÚNG TÔI</button>
+						</form>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="container mt-5 mb-5">
+			<div class="row">
+				<div class="col-md-12 text-center text-capitalize">
+					<h1>Đối tác thương hiệu của chúng tôi</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="container mt-5 mb-5">
+			<div class="owl-carousel owl-theme">
+				<div class="item"><img src="images/1.png" class="img-fluid"></div>
+				<div class="item"><img src="images/2.png" class="img-fluid"></div>
+				<div class="item"><img src="images/3.png" class="img-fluid"></div>
+				<div class="item"><img src="images/6.png" class="img-fluid"></div>
+				<div class="item"><img src="images/4.png" class="img-fluid"></div>
+				<div class="item"><img src="images/5.png" style="height: 100px;" class="img-fluid"></div>
+				<div class="item"><img src="images/7.png" class="img-fluid"></div>
+			</div>
+		</div>
+
+		<div class="container mt-5 mb-5">
+			<div class="row">
+				<div class="col-md-6 payment-method">
+					<p class=" icon pt-5 pb-2"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></p>
+					<h2 class="text-capitalize">Thanh toán</h2>
+					<p class="payment-methode-text">VShop hỗ trợ các phương thức thanh toán sau:<br>
+						1. Thanh toán bằng Ví ShopeePay: áp dụng cho đơn hàng có giá trị cần thanh toán nhỏ hơn hoặc
+						bằng số
+						tiền có trong
+						Ví ShopeePay hoặc tài khoản ngân hàng có liên kết với ShopeePay (chi tiết)<br>
+						2. Thanh toán bằng thẻ ATM nội địa (Internet Banking): áp dụng cho thẻ ATM
+						có đăng ký dịch vụ internet banking và thuộc ngân hàng có liên kết với Shopee (chi tiết)
+						<br>
+						<a href="#" style="color: red;">Chi tiết hơn #</a>
+					</p><br />
+					<img class="img-fluid" src="images/payment_methods.jpg">
+				</div>
+				<div class="col-md-6 payment-method">
+					<p class=" icon pt-5 pb-2"><i class="fa fa-plane" aria-hidden="true"></i></p>
+					<h2 class="text-capitalize">VẬN CHUYỂN</h2>
+					<p class="payment-methode-text">Để thiết lập đơn vị vận chuyển và xử lý đơn hàng nhanh chóng,
+						đơn giản, Chúng ta cần biết cách giao hàng trên VShop và kích hoạt VShop Ship như thế nào.
+						Cùng đọc bài hướng dẫn dưới đây và hãy bắt đầu bằng việc thiết lập Đơn vị vận chuyển,
+						cân nặng và kích thước sau đóng gói cho sản phẩm để quy trình xử lý đơn hàng VShop của bạn
+						dễ
+						dàng
+						hơn
+						nhé!</p><br />
+					<a href="#" style="color: red;">Đọc thêm #</a>
+					<p><i class="fa fa-arrow-right" aria-hidden="true"></i> Free delivery over $30 purches.</p>
+					<p><i class="fa fa-arrow-right" aria-hidden="true"></i> 2 days <strong>free delivery</strong>
+						only
+						for
+						<strong> prime members.</strong>
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Cuối cùng -->
+		<footer class="container-fluid mt-5">
+			<div class="container pt-5 pb-5">
+				<div class="row">
+					<div class="col-md-6">
+						<h3>VSHOP.COM</h3>
+						<p>VSHOP.com hiện nay là ông vua bán lẻ trực tuyến khổng lồ có số lượng người bán hàng và
+							mua
+							hàng
+							cực
+							kì đông đảo, phạm vi hoạt động trên toàn thế giới, thương hiệu của họ luôn được đảm bảo
+							bằng
+							những
+							dịch vụ tốt và uy tín nhất. Mọi thứ quý khách cần đều có thể dễ dàng tìm kiếm tại VSHOP
+							vì
+							hàng
+							hóa
+							vô cùng đa dạng và phong phú cùng với mức giá cạnh tranh so với thị trường, từ những vật
+							dụng
+							sinh
+							hoạt hằng ngày cho đến những mặt hàng cao cấp và xa xỉ nhất ...</p>
+						<p>Chính vì thế VSHOP.vn được ra đời như là một e-commerce Việt Nam nhằm cung cấp cho quý
+							khách
+							hàng
+							dịch vụ
+							mua hàng VSHOp tại Việt Nam, và ship hàng VSHOp về Việt Nam sau đó vận chuyển đến tận
+							tay
+							quý
+							khách hàng một cách nhanh chóng, an toàn với chi phí tiết kiệm nhất...
+						</p>
+					</div>
+
+
+					<div class="col-md-3">
+						<h3>Sản phẩm cuối</h3>
+						<div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g4.jpg" alt=""
+								style="height: 100px; width: 100px;">
+							<div class="media-body">
+								<h5>Áo ngực trắng</h5>
+								<del>$80</del> &nbsp; $70
+							</div>
+
+						</div>
+
+						<div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g6.jpg" alt=""
+								style="height: 100px; width: 100px;">
+							<div class="media-body">
+								<h5>Váy diện sexy</h5>
+								<del>$80</del> &nbsp; $70
+							</div>
+
+						</div>
+					</div>
+
+
+
+					<div class="col-md-3">
+						<h3>Top Sản phẩm</h3>
+						<div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg" alt="">
+							<div class="media-body">
+								<h5>Quần bò xanh</h5>
+								<del>$80</del> &nbsp; $70
+							</div>
+
+						</div>
+
+						<div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg" alt="">
+							<div class="media-body">
+								<h5>Vòng may mắn</h5>
+								<del>$80</del> &nbsp; $70
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+
+	<!-- phan cuoi -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="javascripts/counter.js"></script>
+	<script src="javascripts/owl.carousel.min.js"></script>
+	<script>
+		function readURl(input) {
+			if (input.file && input.file[0]) {
+				var reader = new FileReader;
+				reader.onload = function (e) {
+					$("#imgPreview").attr('src', e.target.result).width(100);
+				}
+				reader.readAsDataURL(input.file[0]);
+			}
+		}
+		$("#img").change(function () {
+			readURl(this)
+		});
+
+		var loadFile = function (event) {
+			var image = document.getElementById('output');
+			image.src = URL.createObjectURL(event.target.files[0]);
+		};
+		$("#output").addClass("img-post-show");
+		$("#output").removeClass("img-2");
+
+		function myA() {
+			var x = document.getElementById("myDIV");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+		function myB() {
+			var x = document.getElementById("myDIV1");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+
+		function myC() {
+			var x = document.getElementById("myDIV-A");
+			if (x.style.display === "block") {
+				x.style.display = "none";
+			} else {
+				x.style.display = "block";
+			}
+		}
+
+		function myfunctionA2() {
+			var x = document.getElementById("myDIV-A");
+			x.style.display = "none";
+		}
+
+
+
+		function myfunctionA1() {
+			var x = document.getElementById("myDIV1");
+			x.style.display = "none";
+		}
+		function myfunctionB1() {
+			var x = document.getElementById("myDIV");
+			x.style.display = "none";
+		}
+
+		function checkOut1() {
+			document.getElementById('khong').style.display = 'block';
+			document.getElementById('dongy').style.display = 'none';
+		}
+		function checkOut2() {
+			document.getElementById('khong').style.display = 'none';
+			document.getElementById('dongy').style.display = 'block';
+			document.getElementById('dongy').style.display = "flex";
+		}
+
+
+	</script>
+</body>
+
+</html>

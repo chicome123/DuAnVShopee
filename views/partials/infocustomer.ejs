@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+  <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="/stylesheets/infocustomer.css">
+  <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+  <link rel="stylesheet" href="/stylesheets/counter.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <title>Thông tin người dùng</title>
+</head>
+
+<body>
+
+  <!-- phần đầu -->
+  <div class="container-fluid" style="background-color: #000000;">
+    <div class="container" style="max-width: 100%;">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand home" style="font-weight: bold;color: white; font-size: 35px; margin-left: 50px;"
+          href="/home">HOME-VShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/admin">Kênh người bán <span class="sr-only">(current)</span></a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Kết nối vói chúng tôi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://www.facebook.com/nonamedatv"><i class="fa fa-facebook" style="padding-left: 10px;
+                padding: 5px 8px 5px 8px;"></i> Facebook</a>
+                <a class="dropdown-item" href="https://www.instagram.com/"><i class="fa fa-instagram" style="padding-left: 10px;
+                padding: 5px;"></i> Instagram</a>
+                <a class="dropdown-item" href="https://twitter.com/"><i class="fa fa-twitter" style="padding-left: 10px;
+                padding: 5px;"></i> Twitter</a>
+              </div>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Bạn muốn tìm kiếm
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Sản phẩm thời trang</a>
+                <a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Một số sản phẩm khác</a>
+              </div>
+            </li>
+            <!-- Thong tin -->
+            
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Hi! <%= username %>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                  <a style="cursor: pointer;" class="dropdown-item"
+                    onclick="window.location.href='/'">Đăng xuất</a>
+                </div>
+              </li>
+            </ul>
+
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
+            <button class="search-form" type="submit">Tìm kiếm</button>
+          </form>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a style="cursor: pointer; box-shadow: none;" onclick="window.location.href='/giohang'"
+                class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                Giỏ hàng của bạn</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+  <!-- Phần thân -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="form-one" style="padding: 20px;">
+          <form style="padding: 20px; 
+          background: #dce2e259; border-radius: 5%;">
+            <div class="info-type" style="display: flex;
+            align-items: center;
+            text-align: center;">
+              <h1>Hồ Sơ Của Tôi</h1>
+              <p style="width: 300px;
+              margin-left: 30px; padding-top: 10px;">update thành công</p>
+            </div>
+            <p>Quản lý thông tin hồ sơ để bảo mật tài khoản</p>
+            <p>Tên đăng nhập: <strong>
+                <%= username %>
+              </strong></p>
+
+            <div class="sun-form-body" style="padding: 0 70px;">
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4">Tên</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" value="<%= username %>">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4">Email</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" value="<%= email %>">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4">Số điện thoại</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" placeholder="Nhập vào đây">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4">Tên shop</label>
+                <div class="col-sm-7">
+                  <input type="text" class="form-control" placeholder="Nhập vào đây">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="staticEmail" class="col-sm-4">Ngày sinh</label>
+
+                <div class="col-sm-7">
+                  <input id="datepicker" width="276" placeholder="Chọn" />
+
+                </div>
+              </div>
+
+              <button class="btn btn-default btn-danger" type="submit" style="width: 100px;
+                height: 40px;
+                border-radius: 5px;" 
+                id="SaveInforCustomer" onclick="SaveInforCustomer();">Lưu</button>
+
+              <button class="btn btn-default btn-danger" type="submit" style="width: 100px;
+                height: 40px;
+                margin-left: 30px;
+                background: blue;
+                border: 1px solid blue;
+                border-radius: 5px;" 
+                id="CancelInforCustomer" onclick="CancelInforCustomer();">Cancel</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+      <div class="col-md-4" style="margin-top: 20px;
+        background: #dce2e259;
+        height: 487px;
+        border-radius: 5%;
+        padding: 20px;">
+
+        <div clas="file_input_wrap" style="text-align: center;">
+          <input type="file" name="imageUpload" id="imageUpload" class="hide" />
+          <label for="imageUpload" style="background: #da6e46;
+          border-radius: 10px;
+          color: white;
+          font-weight: bold;" class="form-image-type-onclick btn btn-large">Bấm chọn ảnh</label>
+        </div>
+        <div class="img_preview_wrap" style="text-align: center;">
+          <img src="" id="imagePreview" alt="Preview Image" width="200px" class="hide" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="lasted-form-end">
+    <!-- phần cuối -->
+    <div class="container-fluid" id="discount">
+      <div class="container discount-session-content">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="text-light text-capitalize">
+              Theo dõi chúng tôi
+            </h1><br />
+            <div class="social-icons">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h1>Đăng ký để được giảm giá<br /> phiếu giảm giá và ưu đãi mới!</h1>
+            <p class="discount-session-content-text">Công nghệ luôn luôn phát triển, bùng nổ trên từng
+              giai
+              đoạn,
+              đội ngủ chúng tôi
+              luôn chiến đấu với những sản phẩm công nghệ hiện đại, ....
+            </p><br />
+            <form class="form-inline">
+              <div class="form-group mx-sm-12 mb-2">
+                <label for="inputPassword2" class="sr-only">Mail Id</label>
+                <input type="password" class="form-control" id="inputPassword2" placeholder="Enter Your Mail Id">
+                &nbsp; &nbsp;
+
+              </div>
+              <button type="submit" style="box-shadow: none;" class="btn btn-danger text-light mb-2">LIÊN HỆ CHÚNG
+                TÔI</button>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-12 text-center text-capitalize">
+          <h1>Đối tác thương hiệu của chúng tôi</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+      <div class="owl-carousel owl-theme">
+        <div class="item"><img src="images/1.png" class="img-fluid"></div>
+        <div class="item"><img src="images/2.png" class="img-fluid"></div>
+        <div class="item"><img src="images/3.png" class="img-fluid"></div>
+        <div class="item"><img src="images/6.png" class="img-fluid"></div>
+        <div class="item"><img src="images/4.png" class="img-fluid"></div>
+        <div class="item"><img src="images/5.png" style="height: 100px;" class="img-fluid"></div>
+        <div class="item"><img src="images/7.png" class="img-fluid"></div>
+      </div>
+    </div>
+
+    <div class="container mt-5 mb-5">
+      <div class="row">
+        <div class="col-md-6 payment-method">
+          <p class=" icon pt-5 pb-2"><i class="fa fa-credit-card-alt" aria-hidden="true"></i></p>
+          <h2 class="text-capitalize">Thanh toán</h2>
+          <p class="payment-methode-text">VShop hỗ trợ các phương thức thanh toán sau:<br>
+            1. Thanh toán bằng Ví ShopeePay: áp dụng cho đơn hàng có giá trị cần thanh toán nhỏ hơn hoặc
+            bằng số
+            tiền có trong
+            Ví ShopeePay hoặc tài khoản ngân hàng có liên kết với ShopeePay (chi tiết)<br>
+            2. Thanh toán bằng thẻ ATM nội địa (Internet Banking): áp dụng cho thẻ ATM
+            có đăng ký dịch vụ internet banking và thuộc ngân hàng có liên kết với Shopee (chi tiết)
+            <br>
+            <a href="#" style="color: red;">Chi tiết hơn #</a>
+          </p><br />
+          <img class="img-fluid" src="images/payment_methods.jpg">
+        </div>
+        <div class="col-md-6 payment-method">
+          <p class=" icon pt-5 pb-2"><i class="fa fa-plane" aria-hidden="true"></i></p>
+          <h2 class="text-capitalize">VẬN CHUYỂN</h2>
+          <p class="payment-methode-text">Để thiết lập đơn vị vận chuyển và xử lý đơn hàng nhanh chóng,
+            đơn giản, Chúng ta cần biết cách giao hàng trên VShop và kích hoạt VShop Ship như thế nào.
+            Cùng đọc bài hướng dẫn dưới đây và hãy bắt đầu bằng việc thiết lập Đơn vị vận chuyển,
+            cân nặng và kích thước sau đóng gói cho sản phẩm để quy trình xử lý đơn hàng VShop của bạn
+            dễ
+            dàng
+            hơn
+            nhé!</p><br />
+          <a href="#" style="color: red;">Đọc thêm #</a>
+          <p><i class="fa fa-arrow-right" aria-hidden="true"></i> Free delivery over $30 purches.</p>
+          <p><i class="fa fa-arrow-right" aria-hidden="true"></i> 2 days <strong>free delivery</strong>
+            only
+            for
+            <strong> prime members.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cuối cùng -->
+    <footer class="container-fluid mt-5">
+      <div class="container pt-5 pb-5">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>VSHOP.COM</h3>
+            <p>VSHOP.com hiện nay là ông vua bán lẻ trực tuyến khổng lồ có số lượng người bán hàng và
+              mua
+              hàng
+              cực
+              kì đông đảo, phạm vi hoạt động trên toàn thế giới, thương hiệu của họ luôn được đảm bảo
+              bằng
+              những
+              dịch vụ tốt và uy tín nhất. Mọi thứ quý khách cần đều có thể dễ dàng tìm kiếm tại VSHOP
+              vì
+              hàng
+              hóa
+              vô cùng đa dạng và phong phú cùng với mức giá cạnh tranh so với thị trường, từ những vật
+              dụng
+              sinh
+              hoạt hằng ngày cho đến những mặt hàng cao cấp và xa xỉ nhất ...</p>
+            <p>Chính vì thế VSHOP.vn được ra đời như là một e-commerce Việt Nam nhằm cung cấp cho quý
+              khách
+              hàng
+              dịch vụ
+              mua hàng VSHOp tại Việt Nam, và ship hàng VSHOp về Việt Nam sau đó vận chuyển đến tận
+              tay
+              quý
+              khách hàng một cách nhanh chóng, an toàn với chi phí tiết kiệm nhất...
+            </p>
+          </div>
+
+
+          <div class="col-md-3">
+            <h3>Sản phẩm cuối</h3>
+            <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g4.jpg" alt=""
+                style="height: 100px; width: 100px;">
+              <div class="media-body">
+                <h5>Áo ngực trắng</h5>
+                <del>$80</del> &nbsp; $70
+              </div>
+
+            </div>
+
+            <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/product/g6.jpg" alt=""
+                style="height: 100px; width: 100px;">
+              <div class="media-body">
+                <h5>Váy diện sexy</h5>
+                <del>$80</del> &nbsp; $70
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col-md-3">
+            <h3>Top Sản phẩm</h3>
+            <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg" alt="">
+              <div class="media-body">
+                <h5>Quần bò xanh</h5>
+                <del>$80</del> &nbsp; $70
+              </div>
+
+            </div>
+
+            <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg" alt="">
+              <div class="media-body">
+                <h5>Vòng may mắn</h5>
+                <del>$80</del> &nbsp; $70
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  </div>
+
+
+
+
+</body>
+<script src="javascripts/counter.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+<script src="javascripts/applogin.js"></script>
+<script src="javascripts/owl.carousel.min.js"></script>
+
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    responsiveClass: true,
+    responsive: {
+      0: {
+        items: 1,
+        nav: true
+      },
+      600: {
+        items: 3,
+        nav: false
+      },
+      1000: {
+        items: 4,
+        nav: false,
+        loop: false
+      }
+    }
+  })
+
+  $('#datepicker').datepicker({
+    uiLibrary: 'bootstrap4'
+  });
+
+  $('#imageUpload').change(function () {
+    readImgUrlAndPreview(this);
+
+    function readImgUrlAndPreview(input) {
+      if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          $('#imagePreview').removeClass('hide').attr('src', e.target.result);
+        }
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  });
+
+</script>
+
+</html>

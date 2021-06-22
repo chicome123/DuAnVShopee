@@ -15,6 +15,10 @@ router.post("/giohang", authController.postGiohang)
 router.get("/giohang/xoa/:id", authController.deleteProduct);
 router.post("/admin/product/add", authController.addManyProduct);
 router.get('/sanphamchitiet',authController.getSanphamchitiet);
+router.get('/trothanhnguoiban',authController.getChanelbecomenguoiban);
+router.get('/themsanpham',authController.getAddProduct);
+router.get('/admin',authController.getAdmin);
+router.get('/infoCustomer',authController.getInfoCustomer);
 
 router.get('/' , (req , res)=>{
    res.clearCookie("username", { httpOnly: true });

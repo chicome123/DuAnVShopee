@@ -17,7 +17,6 @@ const InsertOneAccount = (username, email, password)=>{
 }
 
 // Hàm tìm 1 account trong db
-// Để tránh lõi chưa tìm xong mà api trả về response thì ta dùng promise và async / await để giải quyết
 const FindOneAccount = (username, password) =>{
     return new Promise(resolve=>{ // resolve đóng vai trò như 1 return của 1 hàm
         MongoClient.connect(url, function(err, db) {
@@ -34,6 +33,19 @@ const FindOneAccount = (username, password) =>{
           });
     })
 }
+
+//  cap nhat tai khoan
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("shop");
+//   var myquery = { username: username , password};
+//   var newvalues = { $set: {name: "Mickey", address: "Canyon 123" } };
+//   dbo.collection("customers").updateOne(myquery, newvalues, function(err, res) {
+//     if (err) throw err;
+//     console.log("1 document updated");
+//     db.close();
+//   });
+// });
 
 
 module.exports = {

@@ -1,5 +1,6 @@
 <%- include('../partials/header'); %>
 <body>
+	<!-- phanm dau -->
 	<div class="container-fluid" style="background-color: #000000;">
 		<div class="container" style="max-width: 100%;">
 			<nav class="navbar navbar-expand-lg">
@@ -13,7 +14,7 @@
 				<div class="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+							<a class="nav-link" href="/account/login">Kênh người bán <span class="sr-only">(current)</span></a>
 						</li>
 
 						<li class="nav-item dropdown">
@@ -40,6 +41,7 @@
 								Bạn muốn tìm kiếm
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="/trothanhnguoiban">Trở thành người bán VShop</a>
 								<a class="dropdown-item" href="#">Sản phẩm thời trang</a>
 								<a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
 								<div class="dropdown-divider"></div>
@@ -57,7 +59,7 @@
 					</form>
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a onclick="window.location.href='account/login'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
+							<a style="cursor: pointer;" onclick="window.location.href='account/login'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
 									aria-hidden="true"></i> Giỏ hàng của bạn</a>
 						</li>
 					</ul>
