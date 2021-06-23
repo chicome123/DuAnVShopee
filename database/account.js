@@ -2,7 +2,7 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 const DB = "shop";
 
-// Hàm insert 1 account vào db
+// // Hàm insert 1 account vào db
 const InsertOneAccount = (username, email, password)=>{
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;

@@ -68,31 +68,33 @@
 						</li>
 
 						<!-- thông tin người dùng ở đây -->
-					
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-									data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<%= username %>
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="/infoCustomer">Thông tin tài khoản</a>
-									<a class="dropdown-item" style="cursor: pointer;" onclick="window.location.href='/'">Đăng xuất</a>
-								</div>
-							</li>
 
-							
-						
-						
-						
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<%= username %>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+								<a class="dropdown-item" href="/infoCustomer">Thông tin tài khoản</a>
+								<a class="dropdown-item" style="cursor: pointer;"
+									onclick="window.location.href='/'">Đăng xuất</a>
+							</div>
+						</li>
+
+
+
+
+
 					</ul>
 					<form class="form-inline my-2 my-lg-0">
 						<input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm"
 							aria-label="Search">
-						<button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+						<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
 					</form>
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item">
-							<a style="cursor: pointer;" onclick="window.location.href='/giohang'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
+							<a style="cursor: pointer;" onclick="window.location.href='/giohang'"
+								class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
 									aria-hidden="true"></i> Giỏ hàng của bạn</a>
 						</li>
 					</ul>
@@ -106,93 +108,112 @@
 	<%- include('../partials/middle-header'); %>
 
 		<!-- phần thân -->
-	
+
 		<!-- Nội thất -->
 		<section class="new-arrivals">
 			<div id="site">
 				<div class="container">
-					
-					<!-- Nooij that -->
-					<div class="noithat" style="padding-bottom: 20px;
-					border-bottom: 2px solid black;
-					margin-top: 40px;">
-						<div class="form-header-one-all" style="display: flex;">
-							<h3 style="margin-right: 30px;"><%= username %></h3>
-							<div class="title-box">
-								<h2>Hàng nội thất</h2>
-							</div>
-						</div>
-						<div class="row">
+					<% product.forEach((value)=>{ %>
+						<!-- Nooij that -->
+						<div class="noithat" style="padding-bottom: 20px;
+						border-bottom: 2px solid black;
+						margin-top: 40px;">
 
-							<% product.forEach((value)=>{ %>
+							<div class="form-header-one-all" style="display: flex;">
+								<h3 style="margin-right: 30px;">
+									<%= username %>
+								</h3>
+								<div class="title-box">
+									<h2>
+										<%= value.tensanpham %>
+									</h2>
+								</div>
+							</div>
+							<div class="row">
+
+
 								<div class="col-md-3">
 									<div class="product-top">
-										<img src="<%= value.img %>">
+										<img src="/uploads/ <%= value.imageUpload %>">
 
 										<div class="overlay-right">
-											<button type="button" class="btn btn-secondary" onclick="window.location.href='/sanphamchitiet'" title="Quick Shop">
+											<button type="button" class="btn btn-secondary"
+												onclick="window.location.href='/sanphamchitiet'" title="Quick Shop">
 												<i class="fa fa-eye"></i>
 											</button>
-			
+
 											<button type="button" class="btn btn-secondary" title="Add to Wishlist">
 												<i class="fa fa-heart-o"></i>
 											</button>
-			
+
 											<button type="button" class="btn btn-secondary" title="Add to Cart">
 												<i class="fa fa-shopping-cart"></i>
 											</button>
 										</div>
 									</div>
-			
+
 									<div class="product-bottom text-center">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star-half-o"></i>
-										<h3><%= value.name %></h3>
+										<h3>
+											<%= value.tenhang %>
+										</h3>
 										<div class="product-description" data-name="Mirror" data-price="10">
-			
-											<p class="product-price">&euro; <%= value.price%></p>
+
+											<p class="product-price">&euro; <%= value.giasanpham%>
+											</p>
 											<form class="add-to-cart" action="/giohang" method="post">
 												<div>
 													<label for="qty-2">Số lượng</label>
-													<input type="number" name="number" id="qty-2" class="qty" value="1" />
-													<input style="display: none;" type="text" name="id" value="<%= value._id %>" />
+													<input type="number" name="number" id="qty-2" class="qty" value="1"
+														min="1" />
+													<input style="display: none;" type="text" name="id"
+														value="<%= value._id %>" />
 												</div>
 												<p><input type="submit" value="Thêm vào giỏ" class="btn" /></p>
 											</form>
-			
+
 										</div>
 									</div>
 								</div>
 
-							<% }) %>
-		
-							
+
+
+
+							</div>
+
+
+
+
+							<div class="chon" style="text-align: center; width: 100%;">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="<<">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="1">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="2">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="3">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="4">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="5">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value="6">
+								<input type="submit" style="width: 60px; border-radius: 10%; background: red;"
+									value=">>">
+							</div>
 						</div>
-		
-		
-		
-						
-						<div class="chon" style="text-align: center; width: 100%;">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="<<">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="1">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="2">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="3">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="4">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="5">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value="6">
-							<input type="submit" style="width: 60px; border-radius: 10%; background: red;" value=">>">
-						</div>
-					</div>
-		
+						<% }) %>
 				</div>
 			</div>
 		</section>
-		
+
 		<%- include('../partials/middle-fotter'); %>
-		
+
 
 			<!-- phần cuối -->
 			<div class="container-fluid" id="discount">

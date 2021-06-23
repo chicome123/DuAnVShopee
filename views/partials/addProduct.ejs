@@ -43,7 +43,7 @@
 								Hi! <%= message %>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Thông tin tài khoản</a>
+								<a class="dropdown-item" href="/infocustomer">Thông tin tài khoản</a>
 								<a style="cursor: pointer;" class="dropdown-item"
 									onclick="window.location.href='/'">Đăng xuất</a>
 							</div>
@@ -234,7 +234,7 @@
 
 	<div class="container-middle" style="margin-bottom: 20px;">
 		<div class="container-body-middle">
-			<form action="/themsanpham" method="POST">
+			<form action="/themsanpham" method="POST" enctype="multipart/form-data" >
 				<div class="header-form-one" style="border-bottom: 1px solid rgba(82, 75, 75, 0.26);">
 					<h1>Thêm 1 sản phẩm mới </h1>
 					<p>Vui lòng chọn ngành hàng phù hợp cho sản phẩm của bạn.</p>
@@ -244,8 +244,8 @@
 					<p style="align-items: center;
 					padding-top: 15px; width: 120px;">Tên sản phẩm:</p>
 					<input type="text" style="width: 1000px; height: 40px;
-					margin-left: 30px; padding-left: 10px;" placeholder="Nhập vào" class="shadow-none"
-					id="tensanpham">
+					margin-left: 30px; padding-left: 10px;" placeholder="Nhập vào" class="shadow-none" 
+					name="tensanpham" id="tensanpham">
 				</div>
 
 				<div class="header-form-all-three">
@@ -256,8 +256,8 @@
 						padding: 20px;">
 						<div style="width: 300px; margin-right: 20px;">
 							<i class="icon-item-header fa fa-search" aria-hidden="true"></i>
-							<input class="pmp" type="text" placeholder="Tên hàng"
-							id="tenhang">
+							<input class="pmp" type="text" placeholder="Tên hàng" 
+							id="tenhang" name="tenhang">
 						</div>
 						<div style="display: flex; align-items: center;">
 							<p style="padding-top: 15px; margin-right: 5px;">Chọn ngành hàng chính xác, </p>
@@ -270,10 +270,10 @@
 							<div class="book-images">
 								<p style="width: 200px;">Hình ảnh sản phẩm</p>
 								<div class="img1-book-images">
-									<div class="img1">
+
+									<!-- <div class="img1">
 										<p class="img-2">
 										
-											
 											<img width="100px" height="100px" id="output" />
 										</p>
 										<p><input type="file" accept="image/*" name="image" id="file"
@@ -283,7 +283,19 @@
 											</span>
 										</label>
 										<p>* Ảnh bìa</p>
+									</div> -->
+
+									<div class="img1">
+										<div class="img_preview_wrap">
+											<img src="" name="imagePreview" id="imagePreview" alt="Preview Image" width="200px" class="hide" />
+										</div>
+										<div clas="file_input_wrap">
+											<input type="file" name="imageUpload" id="imageUpload" class="hide"  />
+											<label for="imageUpload" class="btn-in btn-large">Chọn file</label>
+										</div>
 									</div>
+									
+
 
 									<div class="img1">
 										<input type="file" accept="image/*" name="image" id="file"
@@ -385,11 +397,12 @@
 						<div class="book-images">
 							<p style="width: 150px;">Mô tả sản phẩm</p>
 						</div>
-						<textarea name="motasanpham" id="motasanpham" cols="125" rows="9" style="padding: 20px;"></textarea>
+						<textarea name="motasanpham" id="motasanpham" cols="125" rows="9"
+							style="padding: 20px;"></textarea>
 					</div>
 
 					<!-- So luong san pham  -->
-					
+
 					<div class="book-form-select" style="padding: 20px;">
 						<p style="width: 150px;
 						text-align: center; padding: 10px; margin-right: 20px;">Số lượng</p>
@@ -397,8 +410,8 @@
 							border: 1px solid #000000c2;
 							border-radius: 5px;
 							width: 500px;
-							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào"
-							id="soluong">
+							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào" 
+							name="soluong" id="soluong">
 					</div>
 
 					<!-- Gia ca san pham -->
@@ -410,8 +423,8 @@
 							border: 1px solid #000000c2;
 							border-radius: 5px;
 							width: 500px;
-							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào"
-							id="giasanpham">
+							padding-left: 20px;" type="text" placeholder="Vui lòng điền vào" 
+							name="giasanpham" id="giasanpham">
 					</div>
 
 					<!-- Thuong hieu san pham -->
@@ -447,7 +460,7 @@
 					</div>
 
 					<!-- san pham xuat su -->
-					
+
 					<div class="book-form-select" style="padding: 20px;">
 						<p style="width: 150px;
 						text-align: center; padding: 10px; margin-right: 20px;">Xuất xứ</p>
@@ -479,7 +492,7 @@
 					</div>
 
 					<!-- Thong tin khac -->
-					
+
 					<div class="info-khac">
 						<h4>Thông tin khác</h4>
 						<div class="one-for-all-form-one">
@@ -555,13 +568,14 @@
 								padding-left: 20px;" type="text" placeholder="Vui lòng điền vào">
 						</div>
 					</div>
-					
+
 					<div class="footer" style="padding: 20px;">
 						<button class="cmos" onclick="Cancel();">Hủy</button>
 						<button class="cmos" onclick="SaveAndHide();">Lưu & Ẩn</button>
-						<button class="cmoss" onclick="Save();" style="background-color: #ee4d2d; color: white;">
-							Lưu & hiển thị</button>
+						<button class="cmoss" type='submit' onclick="Save();" style="background-color: #ee4d2d; color: white;">
+							Lưu & hiển thị</button> 
 					</div>
+				
 				</div>
 
 
@@ -840,6 +854,22 @@
 		}
 
 
+	</script>
+
+	<script>
+		$('#imageUpload').change(function () {
+			readImgUrlAndPreview(this);
+
+			function readImgUrlAndPreview(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						$('#imagePreview').removeClass('hide').attr('src', e.target.result);
+					}
+				};
+				reader.readAsDataURL(input.files[0]);
+			}
+		});
 	</script>
 </body>
 

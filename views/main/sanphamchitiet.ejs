@@ -1,170 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+
   <link rel="stylesheet" href="/stylesheets/sanphamchitiet.css">
 
   <link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
-	<link rel="stylesheet" href="/stylesheets/counter.css">
-	<link rel="stylesheet" href="/stylesheets/owl.carousel.css">
-	<link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="/stylesheets/style.css">
-	<link rel="stylesheet" href="/stylesheets/style-main.css">
+  <link rel="stylesheet" href="/stylesheets/counter.css">
+  <link rel="stylesheet" href="/stylesheets/owl.carousel.css">
+  <link rel="stylesheet" href="/stylesheets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <link rel="stylesheet" href="/stylesheets/style-main.css">
 
   <title>Sản phẩm chi tiết</title>
 </head>
+
 <body>
   <div class="container-fluid" style="background-color: #000000;">
-		<div class="container" style="max-width: 100%;">
-			<nav class="navbar navbar-expand-lg">
-				<a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
-					href="/">HOME-VShop</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse"
-					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+    <div class="container" style="max-width: 100%;">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand home" style="font-weight: bold; font-size: 35px; margin-left: 50px;"
+          href="/">HOME-VShop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item active">
-							<a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
-						</li>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+            </li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Kết nối vói chúng tôi
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="https://www.facebook.com/nonamedatv"><i
-										class="fa fa-facebook" style="padding-left: 10px;
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Kết nối vói chúng tôi
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="https://www.facebook.com/nonamedatv"><i class="fa fa-facebook" style="padding-left: 10px;
 									padding: 5px 8px 5px 8px;"></i> Facebook</a>
-								<a class="dropdown-item" href="https://www.instagram.com/"><i class="fa fa-instagram"
-										style="padding-left: 10px;
+                <a class="dropdown-item" href="https://www.instagram.com/"><i class="fa fa-instagram" style="padding-left: 10px;
 									padding: 5px;"></i> Instagram</a>
-								<a class="dropdown-item" href="https://twitter.com/"><i class="fa fa-twitter" style="padding-left: 10px;
+                <a class="dropdown-item" href="https://twitter.com/"><i class="fa fa-twitter" style="padding-left: 10px;
 									padding: 5px;"></i> Twitter</a>
-							</div>
-						</li>
+              </div>
+            </li>
 
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								Bạn muốn tìm kiếm
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Sản phẩm thời trang</a>
-								<a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="#">Một số sản phẩm khác</a>
-							</div>
-						</li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Bạn muốn tìm kiếm
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Sản phẩm thời trang</a>
+                <a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Một số sản phẩm khác</a>
+              </div>
+            </li>
 
-						<!-- thông tin người dùng ở đây -->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<%= message %>
-							</a>
-							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Thông tin tài khoản</a>
-								<a class="dropdown-item" onclick="window.location.href='/'">Đăng xuất</a>
-							</div>
-						</li>
-					</ul>
-					<form class="form-inline my-2 my-lg-0">
-						<input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm"
-							aria-label="Search">
-						<button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
-					</form>
-					<ul class="navbar-nav mr-auto">
-						<li class="nav-item">
-							<a onclick="window.location.href='/giohang'" class="btn btn-lg btn-danger text-light ml-5"><i class="fa fa-cart-arrow-down"
-									aria-hidden="true"></i> Giỏ hàng của bạn</a>
-						</li>
-					</ul>
-				</div>
-			</nav>
-		</div>
-	</div>
+            <!-- thông tin người dùng ở đây -->
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <%= username %>
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Thông tin tài khoản</a>
+                <a class="dropdown-item" onclick="window.location.href='/'">Đăng xuất</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Tìm kiếm</button>
+          </form>
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a onclick="window.location.href='/giohang'" class="btn btn-lg btn-danger text-light ml-5"><i
+                  class="fa fa-cart-arrow-down" aria-hidden="true"></i> Giỏ hàng của bạn</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
 
-  
+
   <!-- Phần thân -->
   <div class="container">
-    <div class="product-main" style="margin: 20px 0 20px 0;">
-      <div class="row">
-        <div class="col-md-6">
-          <div class="preview-pic tab-content"> 
-            <div class="tab-pane active" id="pic-1"><img src="/images/for-woman.jpg">
-            </div> 
-            <div class="tab-pane" id="pic-2"><img src="8-300x300.jpg">
-            </div> 
-            <div class="tab-pane" id="pic-3"><img src="/images/for-woman.jpg">
-            </div> 
-            <div class="tab-pane" id="pic-4"><img src="/images/for-woman.jpg">
-            </div> 
-            <div class="tab-pane" id="pic-5"><img src="/images/for-woman.jpg">
-            </div> 
-           </div>
-           <ul class="preview-thumbnail nav nav-tabs">
-            <div class="menu-icon"></div> 
-            <li class="active"><a data-target="#pic-1" data-toggle="tab">
-              <img src="/images/for-woman.jpg"></a>
-            </li> 
-            <li><a data-target="#pic-2" data-toggle="tab">
-              <img src="/images/for-woman.jpg"></a>
-            </li> 
-            <li><a data-target="#pic-3" data-toggle="tab">
-              <img src="/images/for-woman.jpg"></a>
-            </li> 
-            <li><a data-target="#pic-4" data-toggle="tab">
-              <img src="/images/for-woman.jpg"></a>
-            </li> 
-            <li><a data-target="#pic-5" data-toggle="tab">
-              <img src="/images/for-woman.jpg"></a>
-            </li> 
-           </ul> 
-        </div>
-        <div class="col-md-6" style="margin-top: 50px;">
-          <nav class="tab"> 
-            <a href="#">Trang chủ</a><span>/</span><a href="#">Giày dép</a>
-          </nav>
-          <h3>Giày cao cổ nam phối da AQUA M130 SID60452</h3>
-          <div class="price">
-            <span class="amount">500.000</span>
-            <span class="price-curen">đ</span>
-          </div>
-          <div>
-            <p>
-              <strong>Giày cao cổ nam phối da AQUA M130:</strong>
-              Chất liệu vải mềm mịn, đẹp và bền màu thoải mái khi sử dụng. Thiết kế theo kiểu giày cao cổ ôm trọn bàn chân, phối da nổi bật mang lại sự trẻ trung và năng cho các anh chàng
-            </p>
-          </div>
-          <div>
-            <div class="fs-dtslt">KHUYẾN MÃI KÈM THEO</div>
-            <div class="fs-dtslbox">
-              <div class="fs-dtslct">
-                Phiếu mua hàng <span style="color: #ff0000;">500.000đ</span><br>
-                Hoặc: Gói quà tặng <span style="color: #ff0000;">900.000đ</span>
+    <% product.forEach((value)=>{ %>
+      <div class="product-main" style="margin: 20px 0 20px 0;">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="preview-pic tab-content">
+              <div class="tab-pane active" id="pic-1"><img src="<%= value.imagePreview %>">
+              </div>
+              <div class="tab-pane" id="pic-2"><img src="8-300x300.jpg">
+              </div>
+              <div class="tab-pane" id="pic-3"><img src="/images/for-woman.jpg">
+              </div>
+              <div class="tab-pane" id="pic-4"><img src="/images/for-woman.jpg">
+              </div>
+              <div class="tab-pane" id="pic-5"><img src="/images/for-woman.jpg">
               </div>
             </div>
+            <ul class="preview-thumbnail nav nav-tabs">
+              <div class="menu-icon"></div>
+              <li class="active"><a data-target="#pic-1" data-toggle="tab">
+                  <img src="/images/for-woman.jpg"></a>
+              </li>
+              <li><a data-target="#pic-2" data-toggle="tab">
+                  <img src="/images/for-woman.jpg"></a>
+              </li>
+              <li><a data-target="#pic-3" data-toggle="tab">
+                  <img src="/images/for-woman.jpg"></a>
+              </li>
+              <li><a data-target="#pic-4" data-toggle="tab">
+                  <img src="/images/for-woman.jpg"></a>
+              </li>
+              <li><a data-target="#pic-5" data-toggle="tab">
+                  <img src="/images/for-woman.jpg"></a>
+              </li>
+            </ul>
           </div>
-          <form class="cart">
-            <div class="quantity buttons_added">
-              <input type="button" value="-" class="minus">
-              <input type="text" class="input-text qty text" step="1" min="1" max="9999"value="1" title="SL" size="4">
-              <input type="button" value="+" class="plus button">	</div>
-              <button type="submit"class="single_add_to_cart_button">Thêm vào giỏ hàng</button>
-              <button type="submit"class="single_add_to_cart_button">Mua ngay</button>
-          </form>
+          <div class="col-md-6" style="margin-top: 50px;">
+
+            <nav class="tab">
+              <a href="#">Trang chủ</a><span>/</span><a href="#">
+                <%= value.tensanphm %>
+              </a>
+            </nav>
+            <h3>
+              <%= value.tenhang %>
+            </h3>
+            <div class="price">
+              <span class="amount">
+                <%= value.giasanpham %>
+              </span>
+              <span class="price-curen">đ</span>
+            </div>
+            <div>
+              <p>
+                <strong>Giày cao cổ nam phối da AQUA M130:</strong>
+                <%= value.motasanpham %>
+              </p>
+            </div>
+            <div>
+              <div class="fs-dtslt">KHUYẾN MÃI KÈM THEO</div>
+              <div class="fs-dtslbox">
+                <div class="fs-dtslct">
+                  Phiếu mua hàng <span style="color: #ff0000;">
+                    <%= value.giasanpham %>
+                  </span><br>
+                  Hoặc: Gói quà tặng <span style="color: #ff0000;">$900</span>
+                </div>
+              </div>
+            </div>
+            <form class="cart">
+              <div class="quantity buttons_added">
+                <input type="button" value="-" class="minus">
+                <input type="text" class="input-text qty text" step="1" min="1" max="9999" value="<%= value.soluong %>" title="SL"
+                  size="4">
+                <input type="button" value="+" class="plus button">
+              </div>
+              <button type="submit" class="single_add_to_cart_button">Thêm vào giỏ hàng</button>
+              <button type="submit" class="single_add_to_cart_button">Mua ngay</button>
+            </form>
+
+          </div>
         </div>
       </div>
-    </div>
+      <% }) %>
   </div>
 
   <!-- phần cuối -->
@@ -193,8 +205,7 @@
           <form class="form-inline">
             <div class="form-group mx-sm-12 mb-2">
               <label for="inputPassword2" class="sr-only">Mail Id</label>
-              <input type="password" class="form-control" id="inputPassword2"
-                placeholder="Enter Your Mail Id">
+              <input type="password" class="form-control" id="inputPassword2" placeholder="Enter Your Mail Id">
               &nbsp; &nbsp;
 
             </div>
@@ -324,8 +335,7 @@
 
         <div class="col-md-3">
           <h3>Top Sản phẩm</h3>
-          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg"
-              alt="">
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M2.jpg" alt="">
             <div class="media-body">
               <h5>Quần bò xanh</h5>
               <del>$80</del> &nbsp; $70
@@ -333,8 +343,7 @@
 
           </div>
 
-          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg"
-              alt="">
+          <div class="media mt-5"> <img class="mr-3 img-fluid" src="images/footer-images/M7.jpg" alt="">
             <div class="media-body">
               <h5>Vòng may mắn</h5>
               <del>$80</del> &nbsp; $70
@@ -386,4 +395,5 @@
   </script>
 
 </body>
+
 </html>

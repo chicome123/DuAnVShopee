@@ -6,9 +6,9 @@ const {
 const {
     InsertManyProduct,
     FindAllProduct,
+    CreateProductDatabase
     // FindOneProduct
 } = require('../database/product')
-
 
 
 exports.getHome = async (req, res) => {
@@ -57,7 +57,6 @@ exports.postRegister = (req, res) => {
     else {
         res.render('account/login', { message: "Đăng ký thất bại" });
     }
-
 }
 
 exports.getLogOut = (req, res, next) => {
@@ -96,7 +95,6 @@ exports.postGiohang = (req, res, next) => {
     var product = req.cookies["product"];
     // console.log(product)
     if (!!product) {
-
         product.push(req.body)
     }
     else {
@@ -119,14 +117,27 @@ exports.deleteProduct = (req, res) => {
 
 
 // API add many product of admin
+// exports.addManyProduct = (req, res) => {
+//     InsertManyProduct(req.body);
+//     res.send({ message: "Them thanh cong" })
+// }
+
 exports.addManyProduct = (req, res) => {
     InsertManyProduct(req.body);
-    res.send({ message: "Them thanh cong" })
+    const file = req.file;
+    if (!file) {
+        const error = new Error('Please upload a file')
+        error.httpStatusCode = 400
+        return next(error)
+    }
+    console.log("them thanh cong")
+    res.redirect("/themsanpham")
 }
 
-exports.getSanphamchitiet = (req, res) => {
-    var message = req.cookies.username;
-    res.render('main/sanphamchitiet', { message: message });
+exports.getSanphamchitiet = async (req, res) => {
+    var username = req.cookies.username;
+    var product = await FindAllProduct();
+    res.render('main/sanphamchitiet', { username: username, product: product });
 }
 
 exports.getChanelbecomenguoiban = (req, res) => {
@@ -137,9 +148,19 @@ exports.getAdmin = (req, res) => {
     res.render('main/admin');
 }
 
+exports.getTinhtrangdonhang = (req, res) => {
+    res.render('partials/tinhtrangdonhang');
+}
+
 exports.getAddProduct = (req, res) => {
     var message = req.cookies.username;
     res.render('partials/addProduct', { message });
+}
+
+exports.getChangepassoword = (req, res) => {
+    var password = req.body.password;
+    console.log(password)
+    res.render('account/doimk', { password });
 }
 
 exports.getInfoCustomer = async (req, res) => {

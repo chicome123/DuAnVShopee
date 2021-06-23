@@ -2,21 +2,55 @@ var MongoClient = require('mongodb').MongoClient;
 var url = "mongodb://localhost:27017/";
 const DB = "shop";
 
+// Tao bang san pham
+const CreateProductDatabase = () => {
+  MongoClient.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    var sql = 
+    "CREATE TABLE product (tensanpham VARCHAR(255), tenhang VARCHAR(255), imagePreview VARCHAR(255), motasanpham VARCHAR(255), soluong int, giasanpham float";  
+    con.query(sql, function (err, result) {
+      if (err) throw err;
+      console.log("Table created");
+    });
+  });
+}
+
+const InsertManyProduct = (data)=>{
+  //console.log('name ', data.tensanpham)
+  MongoClient.connect(url, function(err, db) {
+      if (err) throw err;
+      var dbo = db.db(DB);
+      var myobj = {
+        tensanpham: data.tensanpham, 
+        tenhang: data.tenhang,
+        imagePreview: data.imagePreview, 
+        motasanpham: data.motasanpham, 
+        soluong: data.soluong, 
+        giasanpham: data.giasanpham};
+      dbo.collection("product").insertOne(myobj, function(err, res) {
+        if (err) throw err;
+        console.log("Number of product inserted: " + res.insertedCount);
+        db.close();
+      });
+    });
+}
+
 
 
 // Hàm insert nhieu san pham vào db
-const InsertManyProduct = (data)=>{
-    MongoClient.connect(url, function(err, db) {
-        if (err) throw err;
-        var dbo = db.db(DB);
-        var myobj = data;
-        dbo.collection("product").insertMany(myobj, function(err, res) {
-          if (err) throw err;
-          console.log("Number of product inserted: " + res.insertedCount);
-          db.close();
-        });
-      });
-}
+// const InsertManyProduct = (data)=>{
+//     MongoClient.connect(url, function(err, db) {
+//         if (err) throw err;
+//         var dbo = db.db(DB);
+//         var myobj = data;
+//         dbo.collection("product").insertMany(myobj, function(err, res) {
+//           if (err) throw err;
+//           console.log("Number of product inserted: " + res.insertedCount);
+//           db.close();
+//         });
+//       });
+// }
 
 // Ham lay tat ca san pham trong db
 const FindAllProduct = ()=>{
@@ -51,38 +85,13 @@ const FindAllProduct = ()=>{
 // }
 
 // bang them san pham den trang sanphamchitiet : sanphamchitiet.ejs
-// const CreateProductDatabase = () => {
-//   MongoClient.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-//     var sql = 
-//     "CREATE TABLE customers (tensanpham VARCHAR(255), tenhang VARCHAR(255), output , motasanpham VARCHAR(255), soluong int, giasanpham float";  
-//     con.query(sql, function (err, result) {
-//       if (err) throw err;
-//       console.log("Table created");
-//     });
-//   });
-// }
 
-
-// bang them san pham den trang home : index.ejs
-// const CreateProductDatabaseChitiet = () => {
-//   MongoClient.connect(function(err) {
-//     if (err) throw err;
-//     console.log("Connected!");
-//     var sql = 
-//     "CREATE TABLE customers (tensanpham VARCHAR(255), tenhang VARCHAR(255), output , soluong int, giasanpham float";  
-//     con.query(sql, function (err, result) {
-//       if (err) throw err;
-//       console.log("Table created");
-//     });
-//   });
-// }
 
 
 
 module.exports = {
     InsertManyProduct,
     FindAllProduct,
+    CreateProductDatabase
     // FindOneProduct
 }
