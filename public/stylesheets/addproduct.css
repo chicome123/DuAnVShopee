@@ -339,8 +339,79 @@ ul>li {
 }
 
 #imagePreview {
-    margin: 15px 0 0 0;
+    /* margin: 15px 0 0 0; */
     border: 2px solid #ddd;
     width: 100px;
     height: 100px;
+    padding: 0px;
+}
+#imagePreview1 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview2 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview3 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview4 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview5 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview6 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview7 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview8 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview9 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+#imagePreview10 {
+    border: 2px solid #ddd;
+    width: 100px;
+    height: 100px;
+    padding: 0px;
+}
+.hidden {
+    display: none;
+}
+
+.hidden1 {
+    display: none;
+}
+.fuckyou {
+    cursor: pointer;
 }
