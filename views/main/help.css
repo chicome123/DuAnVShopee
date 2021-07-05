@@ -91,7 +91,7 @@ body {
     background: white;
     width: 1200px;
     margin-top: 20px;
-    padding: 40px 40px 50px 40px;
+    padding: 40px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -99,8 +99,9 @@ body {
 .header-form-all-three {
     background-color: #cecdcb8c;
     width: 100%;
-    height: 1230px;
+    height: 1720px;
 }
+
 .icon-item-header {
     position: absolute;
     top: 37%;
@@ -117,7 +118,7 @@ body {
 .pmp {
     width: 300px;
     border-radius: 16px;
-    padding-left: 35px;
+    padding-left: 10px;
     height: 40px;
     outline: none;
     font-size: 13px;
@@ -222,7 +223,7 @@ ul>li {
     border-radius: 5px;
     position: absolute;
     display: none;
-    top: 128%;
+    top: 152.8%;
     left: 30.6%;
     background: white;
 }
@@ -260,7 +261,7 @@ ul>li {
     border-radius: 5px;
     position: absolute;
     display: none;
-    top: 138%;
+    top: 163%;
     left: 30.6%;
     background: white;
 }
@@ -280,7 +281,7 @@ ul>li {
     border-radius: 5px;
     position: absolute;
     display: none;
-    top: 160%;
+    top: 185%;
     left: 35.8%;
     background: white;
 }
@@ -296,7 +297,6 @@ ul>li {
 .footer {
     width: 500px;
     margin-left: 630px;
-    margin-top: 10px;
 }
 
 .cmos:hover {
@@ -339,85 +339,11 @@ ul>li {
 }
 
 #imagePreview {
-    /* margin: 15px 0 0 0; */
+    margin: 15px 0 0 0;
     border: 2px solid #ddd;
     width: 100px;
     height: 100px;
-    padding: 0px;
-}
-#imagePreview1 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview2 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview3 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview4 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview5 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview6 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview7 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview8 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview9 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
-}
-#imagePreview10 {
-    border: 2px solid #ddd;
-    width: 100px;
-    height: 100px;
-    padding: 0px;
 }
 .hidden {
     display: none;
 }
-
-.fuckyou {
-    cursor: pointer;
-}
-.upload .dropzone {
-    border: 2px dashed blue;
-}
-.upload {
-    max-width: 767px;
-    display: block;
-    margin: 100px auto 0;
-}
-

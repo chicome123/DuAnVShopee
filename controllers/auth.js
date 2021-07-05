@@ -1,67 +1,103 @@
-const {
-    InsertOneAccount,
-    FindOneAccount,
-} = require('../database/account');
+var mongoose = require('mongoose');
+var express = require('express');
+const uploadspModel = require('../database/product');
+const AccountModel = require('../database/account');
+const bcrypt = require('bcryptjs');
+const bodyParser = require('body-parser');
+const jwt = require('jsonwebtoken');
+const { findOne } = require('../database/product');
+const JWT_SECRET = 'aloxinchaocacbanmimhladatv@#!$#%'
+mongoose.connect('mongodb://localhost/shop', {
+    useUnifiedTopology: true,
+    useNewUrlParser: true,
+    useCreateIndex: true
+});
 
-const {
-    InsertManyProduct,
-    FindAllProduct,
-    CreateProductDatabase
-    // FindOneProduct
-} = require('../database/product')
-
-
+var anhs = [];
 exports.getHome = async (req, res) => {
-    var username = req.cookies["username"];
-    var product = await FindAllProduct();
-    console.log(product)
-    res.render("main/index", { username: username, product: product })
+    var email = req.body.email;
+    console.log(" username ", email)
+    
+    uploadspModel.find({}, function (error, dulieu) {
+        console.log(dulieu);
+        res.render('main/index', {
+            data: dulieu, email: email,
+            message: req.flash('message')
+        });
+    })
 }
 
 exports.getLogin = (req, res, next) => {
-    res.render('account/login', { message: "" });
+    res.render('account/login', 
+    { message: req.flash('message') });
 };
 
 // API Login
 exports.postLogin = async (req, res, next) => {
-
-    // In request của user
-    console.log(req.body)
-
-    // tìm account trong db
-    let data = await FindOneAccount(req.body.username, req.body.password)
-    console.log(data.length)
-
-    if (data.length > 0) {
-        // console.log("login success")
-        res.cookie("username", data[0].username, { httpOnly: true })
-        res.redirect("/home")
+    const email = req.body.email;
+    const password = req.body.password;
+    console.log("tai khoan o dayadnaskudb ", email, password)
+    if (email == "" || password == "") {
+        req.flash('message', 'Yêu cầu đồng chí điền đủ vào .DM');
+        res.redirect('/account/login')
     }
-    else {
-        res.render("account/login", { message: "Đăng nhập thất bại" })
-
-    }
+    AccountModel.findOne({
+        email: email,
+        password: password
+    }).then(data => {
+        if (data) {
+            req.flash('message', 'Chào mừng Bro nhé!!!');
+            res.redirect('/home')
+        } else {
+            req.flash('message', 'Sai cmn tài khoẳn hoặc mk rồi :((');
+            res.redirect('/account/login')
+        }
+    }).catch(err => {
+        res.status(500).json('Co loi ben Server')
+    })
 };
 
-
 // API Register
-exports.postRegister = (req, res) => {
+exports.postRegister = async (req, res) => {
     // In request cua user
-    console.log(req.body)
+    const username = req.body.username;
+    const email = req.body.email;
+    const password = req.body.password;
+    if (username == "" || email == "" || password == "") {
+        req.flash('message', 'Yêu cầu đồng chí điền đủ vào .DM');
+        res.redirect('/account/login')
+    } else {
+        AccountModel.findOne({
+            email: email
+        })
+            .then(data => {
+                if (data) {
+                    req.flash('message', 'Tài khoản bro đã tồn tại');
+                    res.redirect('/account/login')
+                } else {
+                    return AccountModel.create({
+                        username: username,
+                        email: email,
+                        password: password
+                    })
+                }
+            })
+            .then(data => {
+                req.flash('message', 'Làm tốt lắm bro');
+                res.redirect('/account/login')
+            })
+            .catch(err => {
+                req.flash('message', 'Đăng ký thất bại');
+                res.redirect('/account/login')
+            })
+    }
 
-    // Kiểm tra các fieldname tồn tại
-    if (!!req.body.username && !!req.body.email && !!req.body.password) {
-        InsertOneAccount(req.body.username, req.body.email, req.body.password);
-        res.render('account/login', { message: "Đăng ký thành công" })
-    }
-    else {
-        res.render('account/login', { message: "Đăng ký thất bại" });
-    }
 }
+
 
 exports.getLogOut = (req, res, next) => {
     // hàm clear coookie
-    res.clearCookie("username", "product", { httpOnly: true });
+    res.clearCookie("username", { httpOnly: true });
     res.redirect("/");
 }
 
@@ -123,23 +159,37 @@ exports.deleteProduct = (req, res) => {
 // }
 
 exports.addManyProduct = (req, res) => {
-    InsertManyProduct(req.body);
-    const file = req.file;
-    if (!file) {
-        const error = new Error('Please upload a file')
-        error.httpStatusCode = 400
-        return next(error)
+    // InsertManyProduct(req.body);
+    var tensanpham = req.body.tensanpham;
+    var tenhang = req.body.tenhang;
+    var motasanpham = req.body.motasanpham;
+    var soluong = req.body.soluong;
+    var giasanpham = req.body.giasanpham;
+
+    // khai bao doi tuong san pham
+
+    var doituongsanpham = {
+        "tensanpham": tensanpham,
+        "tenhang": tenhang,
+        "anh": anhs,
+        "motasanpham": motasanpham,
+        "soluong": soluong,
+        "giasanpham": giasanpham
     }
+    var dulieu = new uploadspModel(doituongsanpham);
+    dulieu.save();
+
     console.log("them thanh cong")
     res.redirect("/themsanpham")
 }
 
 exports.getSanphamchitiet = async (req, res) => {
     var username = req.cookies.username;
-    var product = await FindAllProduct();
-    res.render('main/sanphamchitiet', { username: username, product: product });
+    uploadspModel.find({}, function (error, dulieu) {
+        console.log(dulieu);
+        res.render('main/sanphamchitiet', { data: dulieu, username: username });
+    })
 }
-
 exports.getChanelbecomenguoiban = (req, res) => {
     res.render('main/chanelnguoiban');
 }
@@ -158,8 +208,12 @@ exports.getAddProduct = (req, res) => {
 }
 
 exports.getChangepassoword = (req, res) => {
-    var password = req.body.password;
-    console.log(password)
+    var password = req.token.password;
+    console.log("mat khau daksbdajhsdbs", password)
+    const { token } = req.body
+    const user = jwt.verify(token, JWT_SECRET)
+    console.log(user)
+    res.json({ status: 'ok' })
     res.render('account/doimk', { password });
 }
 
@@ -171,4 +225,11 @@ exports.getInfoCustomer = async (req, res) => {
     // var email = req.body.email; req.cookie("username", data[0].email)
     // console.log(email.length)
     res.render('partials/infocustomer', { username, email });
+}
+
+exports.uploadfile = (req, res) => {
+    var anhtamthoi = req.files[0].path
+    anhs.push(anhtamthoi);
+    console.log(anhs);
+    res.status(200).send(req.files);
 }

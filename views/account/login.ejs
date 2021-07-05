@@ -8,49 +8,56 @@
   <title>Website DATV</title>
   <link rel="stylesheet" href="/stylesheets/stylelogin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <script>
+		setTimeout(function() {
+			$('.alert-box').remove();
+		}, 2000);
+	</script>
 </head>
 
 <body>
   <div class="container">
     <div class="forms-container">
-     
+
       <div class="signin-signup">
-          <!-- Login -->
+        <!-- Login -->
         <div class="form-dangnhap">
           <div class="logoicon">
             <img src="/images/icon.svg" alt="">
           </div>
           <form action="/account/login" method="POST" class="sign-in-form">
             <!-- message là của api trả về -->
-        <h5 style="color: red"><%= message %></h5> 
+            <% if( message.length > 0 ) { %>
+              <h5 class="alert-box" style="color: red;">
+                <%= message %>
+              </h5>
+              <% } %>
 
-        
-            <h2 class="title">Đăng nhập</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" name="username" id="username" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" name="password" id="password" placeholder="Password" />
-            </div>
-            <input id="Login" type="submit" value="Đăng nhập"
-              class="btn solid" />
-            <p class="social-text">Đăng nhập bằng các nền tảng xã hội</p>
-            <div class="social-media">
-              <a href="https://www.facebook.com/" class="social-icon-fb">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="https://twitter.com/" class="social-icon-tw">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="https://www.google.com/account/about/" class="social-icon-go">
-                <i class="fab fa-google"></i>
-              </a>
-              <a href="https://www.linkedin.com/" class="social-icon-ld">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-            </div>
+                <h2 class="title">Đăng nhập</h2>
+                <div class="input-field">
+                  <i class="fas fa-user"></i>
+                  <input type="text" name="email" id="username" placeholder="Username" />
+                </div>
+                <div class="input-field">
+                  <i class="fas fa-lock"></i>
+                  <input type="password" name="password" id="password" placeholder="Password" />
+                </div>
+                <input id="Login" type="submit" value="Đăng nhập" class="btn solid" />
+                <p class="social-text">Đăng nhập bằng các nền tảng xã hội</p>
+                <div class="social-media">
+                  <a href="https://www.facebook.com/" class="social-icon-fb">
+                    <i class="fab fa-facebook-f"></i>
+                  </a>
+                  <a href="https://twitter.com/" class="social-icon-tw">
+                    <i class="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://www.google.com/account/about/" class="social-icon-go">
+                    <i class="fab fa-google"></i>
+                  </a>
+                  <a href="https://www.linkedin.com/" class="social-icon-ld">
+                    <i class="fab fa-linkedin-in"></i>
+                  </a>
+                </div>
           </form>
         </div>
 
@@ -59,8 +66,9 @@
           <div class="logoicon-1">
             <img src="/images/icon.svg" alt="">
           </div>
-            <!-- Dang ki -->
+          <!-- Dang ki -->
           <form action="/account/register" method="POST" class="sign-up-form">
+            
             <h2 class="title">Đăng Ký</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -93,7 +101,7 @@
           </form>
         </div>
 
-        
+
       </div>
     </div>
 
@@ -101,7 +109,8 @@
       <div class="panel left-panel">
         <div class="content">
           <h3>Chúng tôi ở đây</h3>
-          <p>Giải pháp tối ưu hóa mọi mặt hàng, thống kê, chi tiêu doanh số chuyển đổi số, các Công Nghệ hàng đầu Châu Á số 1 VietNam, 
+          <p>Giải pháp tối ưu hóa mọi mặt hàng, thống kê, chi tiêu doanh số chuyển đổi số, các Công Nghệ hàng đầu Châu Á
+            số 1 VietNam,
             Mua sắm trực tuyến mọi mặt hàng, chất lượng sạch sẽ được kiểm thử bằng các công nghệ cao
           </p>
           <button class="btn transparent" id="sign-up-btn">
@@ -114,7 +123,8 @@
         <div class="content">
           <h3>Công Nghệ Chuyển Đổi Số</h3>
           <p>
-            Thời đại đang chuyển đổi biến động hàng ngày, doanh số đang một ngày tăng áp doanh thu, công Nghệ số 1 hàng đầu, Chúng tôi luôn luôn cải tiến nhưng công nghệ chuyển đổi 
+            Thời đại đang chuyển đổi biến động hàng ngày, doanh số đang một ngày tăng áp doanh thu, công Nghệ số 1 hàng
+            đầu, Chúng tôi luôn luôn cải tiến nhưng công nghệ chuyển đổi
             hằng ngày... Hãy đến với chúng tôi mọi mặt hàng đều được kiểm định và đánh giá ....:D
           </p>
           <button class="btn transparent" id="sign-in-btn">

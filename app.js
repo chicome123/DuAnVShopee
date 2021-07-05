@@ -1,9 +1,10 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+const flash = require('connect-flash')
 var bodyParser = require('body-parser');
 const cors = require('cors');
-
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -20,7 +21,10 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+
+app.use(cookieParser('secret'));
+app.use(flash())
+app.use(session({cookie: { maxAge: 60000 }}));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 

@@ -6,26 +6,25 @@ const upload = require('../middleware/upload');
 const authController = require("../controllers/auth");
 const bodyParser = require('body-parser');
 
-
-// Khởi tạo các router
 // router.get('/account/login', authController.getLogin);
 
 router.get('/account/login', authController.getLogin);
 router.post('/account/login', authController.postLogin);
 router.post("/account/register", authController.postRegister);
-router.get("/home",authController.getHome );
-router.get("/giohang",authController.getGiohang);
+router.get("/home", authController.getHome);
+router.get("/giohang", authController.getGiohang);
 router.post("/giohang", authController.postGiohang)
 router.get("/giohang/xoa/:id", authController.deleteProduct);
-router.post("/admin/product/add", authController.addManyProduct);
-router.get('/sanphamchitiet',authController.getSanphamchitiet);
-router.get('/trothanhnguoiban',authController.getChanelbecomenguoiban);
-router.get('/themsanpham',authController.getAddProduct);
+// router.post("/admin/product/add", authController.addManyProduct);
+router.get('/sanphamchitiet', authController.getSanphamchitiet);
+router.get('/trothanhnguoiban', authController.getChanelbecomenguoiban);
+router.get('/themsanpham', authController.getAddProduct);
 router.post("/themsanpham", upload.single('imageUpload'), authController.addManyProduct);
-router.get('/admin',authController.getAdmin);
-router.get('/infoCustomer',authController.getInfoCustomer);
+router.get('/admin', authController.getAdmin);
+router.get('/infoCustomer', authController.getInfoCustomer);
 router.get('/changepassword', authController.getChangepassoword);
 router.get('/tinhtrangdonhang', authController.getTinhtrangdonhang);
+router.post('/uploadfile', upload.any(), authController.uploadfile);
 
 
 
