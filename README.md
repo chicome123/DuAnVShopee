@@ -10,5 +10,5 @@
 #### ==> [Words](https://github.com/CompanyDATV/DuAnVShopee/tree/today-dat) || scripted by [@V](https://www.facebook.com/VuManhDat412/) || last edited :07/05/2021
 
 <h1 align='center'> Word Docx 2021 </h1>
-<img src="../image/ok.png" width="1000px">
+<img src="image/ok.png" width="1000px">
 
