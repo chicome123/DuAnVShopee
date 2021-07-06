@@ -15,33 +15,29 @@ mongoose.connect('mongodb://localhost/shop', {
 
 var anhs = [];
 exports.getHome = async (req, res) => {
-    var email = req.body.email;
-    console.log(" username ", email)
-    
-    uploadspModel.find({}, function (error, dulieu) {
-        console.log(dulieu);
+  
+    await uploadspModel.find({}, function (error, dulieu) {
         res.render('main/index', {
-            data: dulieu, email: email,
+            data: dulieu,
             message: req.flash('message')
         });
     })
 }
 
 exports.getLogin = (req, res, next) => {
-    res.render('account/login', 
-    { message: req.flash('message') });
+    res.render('account/login',
+        { message: req.flash('message') });
 };
 
 // API Login
 exports.postLogin = async (req, res, next) => {
     const email = req.body.email;
     const password = req.body.password;
-    console.log("tai khoan o dayadnaskudb ", email, password)
     if (email == "" || password == "") {
         req.flash('message', 'Yêu cầu đồng chí điền đủ vào .DM');
         res.redirect('/account/login')
     }
-    AccountModel.findOne({
+    await AccountModel.findOne({
         email: email,
         password: password
     }).then(data => {
@@ -55,6 +51,16 @@ exports.postLogin = async (req, res, next) => {
     }).catch(err => {
         res.status(500).json('Co loi ben Server')
     })
+    let options = {
+        maxAge: 1000 * 60 * 15, // would expire after 15 minutes
+        httpOnly: true, // The cookie only accessible by the web server
+        signed: true, // Indicates if the cookie should be signed
+        AccountModel: new MongoStore({
+            mongooseConnection: db
+          })
+    }
+    res.cookie('username', AccountModel.findOne({username}),  options) 
+    res.send('')
 };
 
 // API Register
@@ -64,7 +70,7 @@ exports.postRegister = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
     if (username == "" || email == "" || password == "") {
-        req.flash('message', 'Yêu cầu đồng chí điền đủ vào .DM');
+        req.flash('message', 'Yêu cầu đồng chí điền đủ vào.');
         res.redirect('/account/login')
     } else {
         AccountModel.findOne({

@@ -6,7 +6,6 @@ const upload = require('../middleware/upload');
 const authController = require("../controllers/auth");
 const bodyParser = require('body-parser');
 
-// router.get('/account/login', authController.getLogin);
 
 router.get('/account/login', authController.getLogin);
 router.post('/account/login', authController.postLogin);
@@ -33,9 +32,5 @@ router.get('/', (req, res) => {
   res.clearCookie("username", { httpOnly: true });
   res.render('main/home');
 });
-
-// router.get('/index' , (req , res)=>{
-//    res.render('main/index');
-// });
 
 module.exports = router;
