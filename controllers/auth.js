@@ -55,12 +55,8 @@ exports.postLogin = async (req, res, next) => {
         maxAge: 1000 * 60 * 15, // would expire after 15 minutes
         httpOnly: true, // The cookie only accessible by the web server
         signed: true, // Indicates if the cookie should be signed
-        AccountModel: new MongoStore({
-            mongooseConnection: db
-          })
     }
-    res.cookie('username', AccountModel.findOne({username}),  options) 
-    res.send('')
+    res.push.cookie()
 };
 
 // API Register
@@ -214,13 +210,14 @@ exports.getAddProduct = (req, res) => {
 }
 
 exports.getChangepassoword = (req, res) => {
-    var password = req.token.password;
-    console.log("mat khau daksbdajhsdbs", password)
-    const { token } = req.body
-    const user = jwt.verify(token, JWT_SECRET)
-    console.log(user)
-    res.json({ status: 'ok' })
-    res.render('account/doimk', { password });
+    // var password = req.body.password;
+    // console.log("mat khau daksbdajhsdbs", password)
+    // const { token } = req.body
+    // const user = jwt.verify(token, JWT_SECRET)
+    // console.log(user)
+    // res.json({ status: 'ok' })
+    // res.render('account/doimk', { password });
+    res.render('account/doimk')
 }
 
 exports.getInfoCustomer = async (req, res) => {
