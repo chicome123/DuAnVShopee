@@ -11,6 +11,7 @@ router.get('/account/login', authController.getLogin);
 router.post('/account/login', authController.postLogin);
 router.post("/account/register", authController.postRegister);
 router.get("/home", authController.getHome);
+router.get("/homeAdmin", authController.getHomeAdmin);
 router.get("/giohang", authController.getGiohang);
 router.post("/giohang", authController.postGiohang)
 router.get("/giohang/xoa/:id", authController.deleteProduct);

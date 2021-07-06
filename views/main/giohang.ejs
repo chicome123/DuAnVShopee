@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Kênh người bán <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/admin">Kênh người bán <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item dropdown">
@@ -65,7 +65,7 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="false">
-                <%= message %>
+
 
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -92,7 +92,7 @@
   <!-- Phần thân -->
   <main style="margin-bottom: 30px;">
     <div class="container mt-4">
-      <h1 class="text-center">Giỏ hàng</h1>
+      <h1 class="text-center">Giỏ hàng của bạn</h1>
       <div class="row">
         <div class="col col-md-12">
           <table class="table table-bordered">
@@ -108,39 +108,50 @@
               </tr>
             </thead>
             <tbody>
-              <% product_detail.forEach((value,  index)=>{ %>
-                <tr>
-                  <td><%= index + 1 %></td>
+              <% data.forEach((value, index)=>{ %>
+                <tr id="remove">
+                  <td>
+                    <%= index + 1 %>
+                  </td>
                   <td>
                     <img style="width: 100px; height: 30px;" src="<%= value.img%>">
                   </td>
-  
-                  <td><%= value.name%></td>
-                  <td class="text-right"><%= value.number %></td>
-                  <td class="text-right"><%= value.price %></td>
-                  <td class="text-right"><%= value.price %></td>
+
+                  <td>
+                    <%= value.tensanpham%>
+                  </td>
+                  <td class="text-right"><input type="number" style="width: 60px; border: none;"
+                      value="<%= value.soluong %>" min="0"></td>
+                  <td class="text-right">
+                    <%= value.giasanpham %>
+                  </td>
+                  <td class="text-right">
+                    <%= value.giasanpham %>
+                  </td>
                   <td style="text-align: center;">
                     <form>
-                      <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham" href="/giohang/xoa/<%= value._id %>">
+                      <!-- <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham"
+                        href="/giohang/xoa/<%= value._id %>"> -->
+                      <a id="delete_1" data-sp-ma="2" class="btn btn-danger btn-delete-sanpham">
                         <i class="fa fa-trash" aria-hidden="true"></i> xóa
                       </a>
                       <!-- <input type="submit" value="Xóa" /> -->
                     </form>
-                    
+
                   </td>
                   <td style="text-align: center;">
                     <a id="delete_1" style="background-color: #0fd8ff; border-color: #0fd8ff" data-sp-ma="2"
                       class="btn btn-danger btn-delete-sanpham">
-                      <i class="fa fa-edit"aria-hidden="true">Sửa</i>
+                      <i class="fa fa-edit" aria-hidden="true">Sửa</i>
                     </a>
                   </td>
                 </tr>
 
-              <% }) %>
-             
+                <% }) %>
 
-             
-              <!-- continue -->
+
+
+                  <!-- continue -->
 
             </tbody>
           </table>
@@ -339,5 +350,13 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
+
+<script>
+
+ 
+  $('#delete_1').click(function(){
+    $("#remove").addClass("remove")
+  })
+</script>
 
 </html>

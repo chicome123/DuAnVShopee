@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var express = require('express');
 const uploadspModel = require('../database/product');
 const AccountModel = require('../database/account');
+const Cart = require('../database/cart')
 const bcrypt = require('bcryptjs');
 const bodyParser = require('body-parser');
 const jwt = require('jsonwebtoken');
@@ -15,9 +16,19 @@ mongoose.connect('mongodb://localhost/shop', {
 
 var anhs = [];
 exports.getHome = async (req, res) => {
-  
+
     await uploadspModel.find({}, function (error, dulieu) {
         res.render('main/index', {
+            data: dulieu,
+            message: req.flash('message')
+        });
+    })
+}
+
+exports.getHomeAdmin = async (req, res) => {
+
+    await uploadspModel.find({}, function (error, dulieu) {
+        res.render('main/tatcasanpham', {
             data: dulieu,
             message: req.flash('message')
         });
@@ -51,12 +62,7 @@ exports.postLogin = async (req, res, next) => {
     }).catch(err => {
         res.status(500).json('Co loi ben Server')
     })
-    let options = {
-        maxAge: 1000 * 60 * 15, // would expire after 15 minutes
-        httpOnly: true, // The cookie only accessible by the web server
-        signed: true, // Indicates if the cookie should be signed
-    }
-    res.push.cookie()
+
 };
 
 // API Register
@@ -85,6 +91,7 @@ exports.postRegister = async (req, res) => {
                 }
             })
             .then(data => {
+                res.cookie('id_username', data._id, 'username', username, 'email', email, 'password', password);
                 req.flash('message', 'Làm tốt lắm bro');
                 res.redirect('/account/login')
             })
@@ -93,65 +100,74 @@ exports.postRegister = async (req, res) => {
                 res.redirect('/account/login')
             })
     }
-
+    let options = {
+        maxAge: 1000 * 60 * 15, // would expire after 15 minutes
+        httpOnly: true, // The cookie only accessible by the web server
+        signed: true, // Indicates if the cookie should be signed
+    }
+    res.push.cookie();
 }
 
 
 exports.getLogOut = (req, res, next) => {
     // hàm clear coookie
-    res.clearCookie("username", { httpOnly: true });
+    res.clearCookie("id_username", { httpOnly: true });
     res.redirect("/");
 }
 
 
 
 exports.getGiohang = async (req, res, next) => {
-    var product = req.cookies["product"];
-
-
+    // var product = req.cookies["product"];
     // console.log(product)
-    var product_detail = []
-    var product_of_db = await FindAllProduct();
-    product.forEach(async value => {
-        // console.log(value.id)
-        let p = product_of_db.filter(item => item._id == value.id)[0];
-        // console.log(p)
-        p.number = value.number
+    // var product_detail = []
+    // var product_of_db = await FindAllProduct();
+    // product.forEach(async value => {
+    //     // console.log(value.id)
+    //     let p = product_of_db.filter(item => item._id == value.id)[0];
+    //     // console.log(p)
+    //     p.number = value.number
 
-        product_detail.push(p)
-    })
+    //     product_detail.push(p)
+    // })
 
     // console.log(req.cookies);
-    var message = req.cookies.username;
+    // res.render('main/giohang', { product_detail: product_detail, message: message });
+    uploadspModel.find({}, function (error, dulieu) {
 
-    res.render('main/giohang', { product_detail: product_detail, message: message });
+        res.render('main/giohang', { data: dulieu });
+    })
 }
 
 // Them san pham
 exports.postGiohang = (req, res, next) => {
     // console.log(req.body)
-    var product = req.cookies["product"];
-    // console.log(product)
-    if (!!product) {
-        product.push(req.body)
-    }
-    else {
-        product = [];
-        product.push(req.body)
-    }
-    res.cookie("product", product, { httpOnly: true })
-    res.redirect("/home");
-}
+    // var product = req.cookies["product"];
+    // // console.log(product)
+    // if (!!product) {
+    //     product.push(req.body)
+    // }
+    // else {
+    //     product = [];
+    //     product.push(req.body)
+    // }
+    // res.cookie("product", product, { httpOnly: true })
 
-exports.deleteProduct = (req, res) => {
-    var product = req.cookies["product"];
-    // console.log(product)
-    console.log(req.params.id)
-    product = product.filter(item => item.id != req.params.id);
-    res.cookie("product", product, { httpOnly: true })
+    const addProduct = uploadspModel.findById(req.body._id);
+    console.log("id gio hang day ==> ", addProduct);
     res.redirect("/giohang");
 }
 
+
+
+exports.deleteProduct = (req, res) => {
+    // var product = req.cookies["product"];
+    // // console.log(product)
+    // console.log(req.params.id)
+    // product = product.filter(item => item.id != req.params.id);
+    // res.cookie("product", product, { httpOnly: true })
+    res.redirect("/giohang");
+}
 
 
 // API add many product of admin
@@ -180,7 +196,6 @@ exports.addManyProduct = (req, res) => {
     }
     var dulieu = new uploadspModel(doituongsanpham);
     dulieu.save();
-
     console.log("them thanh cong")
     res.redirect("/themsanpham")
 }
@@ -210,14 +225,15 @@ exports.getAddProduct = (req, res) => {
 }
 
 exports.getChangepassoword = (req, res) => {
-    // var password = req.body.password;
-    // console.log("mat khau daksbdajhsdbs", password)
-    // const { token } = req.body
-    // const user = jwt.verify(token, JWT_SECRET)
-    // console.log(user)
-    // res.json({ status: 'ok' })
-    // res.render('account/doimk', { password });
-    res.render('account/doimk')
+    var username = req.body.email;
+    console.log("username hien tai la ", username)
+    var password = req.body.password;
+    console.log("mat khau daksbdajhsdbs", password)
+    AccountModel.findOne({
+
+    })
+    res.json({ status: 'ok' })
+    res.render('account/doimk', { password });
 }
 
 exports.getInfoCustomer = async (req, res) => {

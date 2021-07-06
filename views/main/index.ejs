@@ -65,8 +65,8 @@
 								Bạn muốn tìm kiếm
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a class="dropdown-item" href="#">Sản phẩm thời trang</a>
-								<a class="dropdown-item" href="#">Sản phẩm Công Nghệ</a>
+								<a class="dropdown-item" href="#spthoitrang">Sản phẩm thời trang</a>
+								<a class="dropdown-item" href="#spcongnghe">Sản phẩm Công Nghệ</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="#">Một số sản phẩm khác</a>
 							</div>
@@ -111,8 +111,6 @@
 			<!-- phần đầu -->
 
 			<%- include('../partials/middle-header'); %>
-
-				<!-- phần thân -->
 
 				<!-- Nội thất -->
 				<section class="new-arrivals">
@@ -171,6 +169,8 @@
 
 													<p class="product-price">&euro; <%= motphantu.giasanpham%>
 													</p>
+
+
 													<form class="add-to-cart" action="/giohang" method="post">
 														<div>
 															<label for="qty-2">Số lượng</label>

@@ -480,3 +480,8 @@ form input.qty {
 }
 
 /* tem */
+
+
+.remove {
+	display: none;
+}
