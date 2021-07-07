@@ -252,3 +252,4 @@ exports.uploadfile = (req, res) => {
     console.log(anhs);
     res.status(200).send(req.files);
 }
+

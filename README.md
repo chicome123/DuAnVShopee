@@ -30,6 +30,10 @@ Run web: npm run dev
 <h1 align='center'> Word Docx 2021 </h1>
 <img src="image/ok.png" width="1000px">
 
+# ae chúng tôi đã làm việc như thế nào 
+<img src="image/dem.png" width="1000px">
+<img src="image/sangnay.png" width="1000px">
+
 
 <center>Resolve ==> </center>
 
