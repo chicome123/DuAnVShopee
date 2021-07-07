@@ -12,7 +12,7 @@ Run web: npm run dev
 
 ==>
 
-### ==> [File Words](https://github.com/CompanyDATV/DuAnVShopee/blob/today-dat/VSHOP.pdf) || scripted by [@V](https://www.facebook.com/VuManhDat412/) || last edited :07/05/2021
+### ==> [File FPD](https://github.com/CompanyDATV/DuAnVShopee/blob/today-dat/VSHOP.pdf) || scripted by [@V](https://www.facebook.com/VuManhDat412/) || last edited :07/05/2021
 
 <h1 align='center'> Word Docx 2021 </h1>
 <img src="image/ok.png" width="1000px">
