@@ -1,5 +1,8 @@
 <h1 align='center'>Welcome To DATV</h1>
 
+
+Run web: npm run dev
+
 # Website sàn thương mại điện tử - VShop (DATV)
 | SINH VIÊN THỰC HIỆN | VŨ MẠNH ĐẠT
 | :------------: |:---------------|
