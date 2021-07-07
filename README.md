@@ -7,10 +7,16 @@
 | -STAFF- | ĐOÀN THANH TÙNG|
 | -STAFF- | BÙI MẠNH HUY|
 
-#### ==> [Words](https://github.com/CompanyDATV/DuAnVShopee/tree/today-dat) || scripted by [@V](https://www.facebook.com/VuManhDat412/) || last edited :07/05/2021
+==>
+
+### ==> [File Words](https://github.com/CompanyDATV/DuAnVShopee/blob/today-dat/VSHOP.pdf) || scripted by [@V](https://www.facebook.com/VuManhDat412/) || last edited :07/05/2021
 
 <h1 align='center'> Word Docx 2021 </h1>
 <img src="image/ok.png" width="1000px">
+
+
+
+
 
 <h1>Vì một số lý do cho nên đội ngũ chúng tôi không thể hoàn thành xong dự án, mong các bạn đọc thông cảm cho nha</h1>
 <h1>Có thời gian tôi sẽ update chúng :3</h1>
